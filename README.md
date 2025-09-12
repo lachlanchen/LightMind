@@ -1,10 +1,10 @@
-# NeuroMem - AI-Powered Memory Enhancement Device
+# LightMind - AI-Powered Memory Enhancement Device
 
-![NeuroMem Banner](prototype.png)
+![LightMind Banner](prototype.png)
 
 ## 🧠 Project Overview
 
-NeuroMem is a revolutionary wearable device that combines low-cost hardware, neuromorphic optical encryption, and multimodal AI to create an intelligent memory enhancement system. The device automatically captures and analyzes daily experiences, creating a searchable memory graph of people, events, locations, and relationships.
+LightMind is a revolutionary wearable device that combines low-cost hardware, neuromorphic optical encryption, and multimodal AI to create an intelligent memory enhancement system. The device automatically captures and analyzes daily experiences, creating a searchable memory graph of people, events, locations, and relationships.
 
 ### Key Innovation
 - **Neuromorphic Optical Encryption**: Facial features are encoded using neural networks without storing actual images - ensuring complete privacy while enabling AI recognition
@@ -183,11 +183,11 @@ We envision a future where:
 
 ## 🚀 Getting Started
 
-This repository contains the landing page for NeuroMem. To view locally:
+This repository contains the landing page for LightMind. To view locally:
 
 ```bash
-git clone [your-repo-url]
-cd neuromem-website
+git clone https://github.com/LightMind
+cd LightMind
 # Open index.html in your browser or serve with:
 python -m http.server 8000
 ```
