@@ -1,17 +1,17 @@
 # GitHub Pages Configuration
-title: "NeuroMem - AI-Powered Memory Enhancement"
+title: "LightMind - AI-Powered Memory Enhancement"
 description: "Revolutionary wearable device that captures, encrypts, and intelligently organizes your daily experiences into a searchable memory graph."
 baseurl: "" # Leave empty if using username.github.io
-url: "https://yourusername.github.io" # Replace with your GitHub username
+url: "https://lightmind.github.io" # Replace with your GitHub username
 
 # Author information
 author:
-  name: "NeuroMem Team"
+  name: "LightMind Team"
   email: "contact@neuromem.dev"
 
 # Social links (optional)
 social:
-  github: "yourusername"
+  github: "lightmind"
   linkedin: "your-linkedin"
   twitter: "your-twitter"
 
