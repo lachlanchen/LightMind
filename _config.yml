@@ -1,0 +1,50 @@
+# GitHub Pages Configuration
+title: "NeuroMem - AI-Powered Memory Enhancement"
+description: "Revolutionary wearable device that captures, encrypts, and intelligently organizes your daily experiences into a searchable memory graph."
+baseurl: "" # Leave empty if using username.github.io
+url: "https://yourusername.github.io" # Replace with your GitHub username
+
+# Author information
+author:
+  name: "NeuroMem Team"
+  email: "contact@neuromem.dev"
+
+# Social links (optional)
+social:
+  github: "yourusername"
+  linkedin: "your-linkedin"
+  twitter: "your-twitter"
+
+# SEO settings
+lang: en
+locale: en_US
+
+# GitHub Pages specific settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude these files from the built site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Include these files in the built site
+include:
+  - _pages
+  - assets
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
