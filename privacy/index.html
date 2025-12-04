@@ -1196,16 +1196,82 @@
 
             var policies = document.querySelectorAll('.policy');
 
-            switcher.addEventListener('change', function () {
-                var lang = this.value;
+            function applyLanguage(lang) {
+                var found = false;
                 policies.forEach(function (section) {
-                    if (section.getAttribute('data-lang') === lang) {
+                    var sectionLang = section.getAttribute('data-lang');
+                    if (sectionLang === lang) {
                         section.classList.add('policy--active');
+                        found = true;
                     } else {
                         section.classList.remove('policy--active');
                     }
                 });
+
+                if (!found) {
+                    lang = 'en';
+                    policies.forEach(function (section) {
+                        if (section.getAttribute('data-lang') === 'en') {
+                            section.classList.add('policy--active');
+                        } else {
+                            section.classList.remove('policy--active');
+                        }
+                    });
+                }
+
+                switcher.value = lang;
+
+                if (lang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                }
+            }
+
+            switcher.addEventListener('change', function () {
+                var lang = this.value;
+                applyLanguage(lang);
+                try {
+                    localStorage.setItem('lightmind-privacy-lang', lang);
+                } catch (e) {}
             });
+
+            // Auto-detect preferred language (with user override via localStorage)
+            var initialLang = 'en';
+            try {
+                var stored = localStorage.getItem('lightmind-privacy-lang');
+                if (stored) {
+                    initialLang = stored;
+                } else if (navigator.languages && navigator.languages.length) {
+                    initialLang = navigator.languages[0];
+                } else if (navigator.language) {
+                    initialLang = navigator.language;
+                }
+            } catch (e) {}
+
+            // Map full locale code (e.g., "en-US") to our supported set
+            initialLang = initialLang.toLowerCase();
+            if (initialLang.startsWith('zh-hant') || initialLang === 'zh-tw' || initialLang === 'zh-hk' || initialLang === 'zh-mo') {
+                initialLang = 'zh-Hant';
+            } else if (initialLang.startsWith('zh')) {
+                initialLang = 'zh-Hans';
+            } else if (initialLang.startsWith('ja')) {
+                initialLang = 'ja';
+            } else if (initialLang.startsWith('ko')) {
+                initialLang = 'ko';
+            } else if (initialLang.startsWith('vi')) {
+                initialLang = 'vi';
+            } else if (initialLang.startsWith('ar')) {
+                initialLang = 'ar';
+            } else if (initialLang.startsWith('fr')) {
+                initialLang = 'fr';
+            } else if (initialLang.startsWith('es')) {
+                initialLang = 'es';
+            } else {
+                initialLang = 'en';
+            }
+
+            applyLanguage(initialLang);
         });
     </script>
 </body>
