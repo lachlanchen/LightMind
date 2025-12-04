@@ -113,6 +113,38 @@
             color: #ff00ea;
         }
 
+        .lang-selector {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .lang-selector select {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 6px 18px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .lang-selector select:focus {
+            border-color: #00f4ff;
+        }
+
+        .policy {
+            display: none;
+        }
+
+        .policy--active {
+            display: block;
+        }
+
         footer {
             max-width: 960px;
             margin: 0 auto 40px;
@@ -147,10 +179,26 @@
     </header>
 
     <main>
-        <h1>Privacy Policy</h1>
-        <div class="meta">
-            Last updated: March 1, 2025
+        <div class="lang-selector">
+            <span>Language / 語言 / 언어 / Ngôn ngữ / اللغة / Langue / Idioma:</span>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="zh-Hant">繁體中文</option>
+                <option value="zh-Hans">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+            </select>
         </div>
+
+        <section class="policy policy--active" data-lang="en" lang="en">
+            <h1>Privacy Policy</h1>
+            <div class="meta">
+                Last updated: March 1, 2025
+            </div>
 
         <p>
             This Privacy Policy explains how LightMind (“we”, “us”, or “our”) collects, uses, and protects
@@ -258,11 +306,907 @@
             Email: <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
             Website: <a href="https://lightmind.art">https://lightmind.art</a>
         </p>
+        </section>
+
+        <section class="policy" data-lang="zh-Hant" lang="zh-Hant">
+            <h1>隱私權政策</h1>
+            <div class="meta">
+                最近更新日期：2025 年 3 月 1 日
+            </div>
+
+            <p>
+                本隱私權政策說明 LightMind（以下稱「我們」）在您使用我們的產品與服務時（包括 LightMind App、
+                穿戴式裝置以及相關網站，以下統稱「服務」）如何蒐集、使用與保護您的資訊。
+            </p>
+
+            <h2>1. 我們蒐集的資訊</h2>
+            <p>依您使用服務的方式不同，我們可能會蒐集下列資訊：</p>
+            <ul>
+                <li><strong>帳戶資訊</strong>：例如您的姓名、電子郵件地址與驗證相關資料。</li>
+                <li><strong>使用情形資訊</strong>：例如 App 互動紀錄、偏好設定與功能使用情況。</li>
+                <li><strong>裝置資訊</strong>：例如硬體型號、作業系統、裝置識別碼與診斷資料。</li>
+                <li><strong>視覺與音訊資料</strong>：在您啟用錄製功能時，由 LightMind 裝置或 App 所擷取的環境影像與聲音。</li>
+                <li><strong>衍生資料</strong>：例如由我們的 AI 模型自上述資料產生的文字轉錄、向量嵌入、記憶圖譜、摘要與洞見等。</li>
+            </ul>
+
+            <p>
+                您可以在裝置或系統設定中選擇是否啟用特定感測器或錄製模式（例如相機或麥克風）。
+                在法律要求的情況下，我們會在存取這些功能前徵求您的同意。
+            </p>
+
+            <h2>2. 我們如何使用資訊</h2>
+            <p>我們使用所蒐集的資訊以：</p>
+            <ul>
+                <li>提供、維運與改善服務。</li>
+                <li>依您的指示建立可搜尋的記憶圖譜、文字紀錄與洞見。</li>
+                <li>為您個人化體驗，提供相關提醒與內容。</li>
+                <li>監控效能、修正問題並提升穩定性與安全性。</li>
+                <li>開發新功能、新模型與新產品。</li>
+                <li>遵守法律義務並執行我們的使用條款。</li>
+            </ul>
+
+            <h2>3. 資料處理與保存</h2>
+            <p>
+                我們的目標是盡可能在裝置端或透過具隱私保護設計的技術（例如加密與光學編碼）處理資料。
+                當資料需要傳送至伺服器（例如備份或進階分析）時，我們會在技術可行的情況下，透過傳輸與儲存加密進行保護。
+            </p>
+            <p>
+                我們會在提供服務、履行法律義務或您要求刪除之前，保留必要期間的個人資訊，並依適用的法規要求保存或刪除。
+            </p>
+
+            <h2>4. 資訊分享</h2>
+            <p>我們不會出售您的個人資訊。我們僅在下列有限情況分享資訊：</p>
+            <ul>
+                <li>與協助我們營運、維護或分析服務的可信賴服務提供者分享，並要求其遵守保密與安全義務。</li>
+                <li>在您同意或依您指示時，例如您將資料匯出或分享至第三方應用程式。</li>
+                <li>為遵守適用之法律、法規、法律程序或政府要求。</li>
+                <li>在法律許可範圍內，為保護 LightMind、使用者或大眾的權利、財產或安全。</li>
+                <li>於合併、收購、融資或全部或部分業務出售等交易中，在具備適當保護措施的前提下分享。</li>
+            </ul>
+
+            <h2>5. 您的權利與選擇</h2>
+            <p>依您所在地與適用法規，您可能享有以下權利：</p>
+            <ul>
+                <li>請求存取我們所持有的您的個人資訊副本。</li>
+                <li>請求更正不正確或不完整的個人資訊。</li>
+                <li>在符合法律規定的情況下，請求刪除您的個人資訊。</li>
+                <li>反對或要求限制特定類型的處理活動。</li>
+                <li>在處理基於您的同意時（例如某些選用功能），隨時撤回同意。</li>
+            </ul>
+            <p>
+                您可透過 <a href="mailto:contact@lightmind.art">contact@lightmind.art</a> 與我們聯繫以行使上述權利。
+                在處理您的請求前，我們可能需要先驗證您的身分。
+            </p>
+
+            <h2>6. 兒童隱私</h2>
+            <p>
+                本服務並非設計供 13 歲以下（或當地法律要求之更高年齡）的兒童使用，
+                我們亦不會有意識地蒐集此年齡層兒童的個人資訊。
+                若您認為我們在違反本政策的情況下蒐集了兒童資訊，請與我們聯繫以便採取適當措施。
+            </p>
+
+            <h2>7. 國際資料傳輸</h2>
+            <p>
+                您的資訊可能會在您居住國以外的伺服器處理與儲存，
+                該等國家／地區的資料保護法可能與您所在國不同。
+                在法律要求時，我們會採取適當的保護措施，以保障在跨境傳輸過程中的您的資訊。
+            </p>
+
+            <h2>8. 資訊安全</h2>
+            <p>
+                我們採取技術與組織性措施保護您的資訊，包括加密、存取控制與安全監控。
+                然而，沒有任何系統能保證絕對安全，我們無法保證您的資料在任何情況下均不會遭到未經授權的存取或使用。
+            </p>
+
+            <h2>9. 本政策之變更</h2>
+            <p>
+                我們可能不時更新本隱私權政策。若有變更，我們會更新頁首的「最近更新日期」。
+                若屬重大變更，我們可能會提供額外通知（例如在 App 內或透過電子郵件）。
+                在變更生效後，您持續使用服務即表示您接受更新後的政策。
+            </p>
+
+            <h2>10. 聯絡我們</h2>
+            <p>若您對本隱私權政策或我們的資料處理方式有任何疑問或疑慮，歡迎與我們聯繫：</p>
+            <p>
+                電子郵件：<a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                網站：<a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="zh-Hans" lang="zh-Hans">
+            <h1>隐私政策</h1>
+            <div class="meta">
+                最近更新日期：2025 年 3 月 1 日
+            </div>
+
+            <p>
+                本隐私政策说明 LightMind（下称“我们”）在您使用我们的产品和服务时（包括 LightMind 应用、
+                可穿戴设备以及相关网站，统称为“服务”）如何收集、使用和保护您的信息。
+            </p>
+
+            <h2>1. 我们收集的信息</h2>
+            <p>根据您使用服务的方式不同，我们可能会收集以下信息：</p>
+            <ul>
+                <li><strong>账户信息</strong>：例如您的姓名、电子邮箱地址和身份验证相关信息。</li>
+                <li><strong>使用情况信息</strong>：例如应用交互记录、设置偏好和功能使用情况。</li>
+                <li><strong>设备信息</strong>：例如硬件型号、操作系统、设备标识符和诊断数据。</li>
+                <li><strong>音视频数据</strong>：当您启用录制功能时，由 LightMind 设备或应用捕获的环境图像和声音。</li>
+                <li><strong>衍生数据</strong>：例如由我们的 AI 模型基于上述数据生成的文本转录、向量嵌入、记忆图谱、摘要和洞察。</li>
+            </ul>
+
+            <p>
+                您可以在设备或系统设置中选择是否启用特定传感器或录制模式（例如摄像头或麦克风）。
+                在法律要求的情况下，我们会在访问这些功能之前征得您的同意。
+            </p>
+
+            <h2>2. 我们如何使用信息</h2>
+            <p>我们使用收集到的信息以：</p>
+            <ul>
+                <li>提供、运行和维护服务。</li>
+                <li>根据您的指示创建可搜索的记忆图谱、文本记录和洞察。</li>
+                <li>为您个性化体验，提供相关提醒和内容。</li>
+                <li>监控性能、修复问题并提升稳定性和安全性。</li>
+                <li>开发新功能、新模型和新产品。</li>
+                <li>履行法律义务并执行我们的使用条款。</li>
+            </ul>
+
+            <h2>3. 数据处理与存储</h2>
+            <p>
+                我们的目标是在设备端或通过具备隐私保护设计的技术（如加密与光学编码）尽可能多地处理数据。
+                当数据需要发送到我们的服务器时（例如用于备份或高级分析），我们会在技术可行的情况下，对传输和存储过程进行加密保护。
+            </p>
+            <p>
+                我们会在为您提供服务、履行法律义务或您要求删除之前，保留必要期间的个人信息，并根据适用法律的要求进行保存或删除。
+            </p>
+
+            <h2>4. 信息共享</h2>
+            <p>我们不会出售您的个人信息。仅在以下有限情形下与第三方共享信息：</p>
+            <ul>
+                <li>与帮助我们运营、维护或分析服务的可信服务提供商共享，并要求其履行保密和安全义务。</li>
+                <li>在您同意或应您的指示时，例如您将数据导出或分享至第三方应用。</li>
+                <li>为遵守适用的法律、法规、法律程序或政府要求。</li>
+                <li>在法律允许的范围内，为保护 LightMind、用户或公众的权利、财产或安全。</li>
+                <li>在合并、收购、融资或全部或部分业务出售等交易中，在采取适当保护措施的情况下共享。</li>
+            </ul>
+
+            <h2>5. 您的权利与选择</h2>
+            <p>根据您的所在地及适用法律，您可能享有以下权利：</p>
+            <ul>
+                <li>请求访问我们持有的关于您的个人信息副本。</li>
+                <li>请求更正不准确或不完整的个人信息。</li>
+                <li>在符合法律要求的情况下，请求删除您的个人信息。</li>
+                <li>反对或限制某些类型的处理活动。</li>
+                <li>在处理基于同意时（例如某些可选功能），随时撤回您的同意。</li>
+            </ul>
+            <p>
+                您可以通过 <a href="mailto:contact@lightmind.art">contact@lightmind.art</a> 与我们联系以行使上述权利。
+                在处理您的请求之前，我们可能需要先对您的身份进行验证。
+            </p>
+
+            <h2>6. 儿童隐私</h2>
+            <p>
+                本服务并非面向 13 周岁以下（或当地法律要求的更高年龄）的儿童，
+                我们不会有意收集该年龄段儿童的个人信息。
+                若您认为我们在违反本政策的情况下收集了儿童信息，请与我们联系，以便我们采取适当措施。
+            </p>
+
+            <h2>7. 国际数据传输</h2>
+            <p>
+                您的信息可能会在您居住国以外的服务器上被处理和存储，
+                这些国家／地区的数据保护法律可能与您所在国家不同。
+                在法律要求时，我们会采取适当的保护措施，以保障跨境传输过程中的您的信息安全。
+            </p>
+
+            <h2>8. 信息安全</h2>
+            <p>
+                我们采取技术和组织措施保护您的信息，包括加密、访问控制和安全监控。
+                但任何系统都无法保证绝对安全，我们无法承诺在任何情况下都完全避免未授权访问或使用。
+            </p>
+
+            <h2>9. 政策变更</h2>
+            <p>
+                我们可能不时更新本隐私政策。若有变更，我们会更新页面顶部的“最近更新日期”。
+                如属重大变更，我们可能会提供额外通知（例如在应用内或通过电子邮件）。
+                变更生效后，您继续使用服务即表示您接受更新后的政策。
+            </p>
+
+            <h2>10. 联系我们</h2>
+            <p>如果您对本隐私政策或我们的数据处理方式有任何疑问或担忧，请与我们联系：</p>
+            <p>
+                电子邮箱：<a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                网站：<a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="ja" lang="ja">
+            <h1>プライバシーポリシー</h1>
+            <div class="meta">
+                最終更新日：2025年3月1日
+            </div>
+
+            <p>
+                本プライバシーポリシーは、LightMind（「当社」）が、LightMind アプリ、ウェアラブルデバイス、
+                および関連ウェブサイト（総称して「本サービス」）のご利用にあたり、どのように情報を収集・利用・保護するかについて説明するものです。
+            </p>
+
+            <h2>1. 収集する情報</h2>
+            <p>本サービスのご利用方法に応じて、当社は次の情報を収集する場合があります。</p>
+            <ul>
+                <li><strong>アカウント情報</strong>：氏名、メールアドレス、認証に関する情報など。</li>
+                <li><strong>利用状況情報</strong>：アプリ内での操作履歴、設定、機能の利用状況など。</li>
+                <li><strong>デバイス情報</strong>：ハードウェアモデル、OS、デバイス識別子、診断情報など。</li>
+                <li><strong>音声・映像データ</strong>：録音機能を有効にした場合に、LightMind デバイスまたはアプリが取得する周囲の映像や音声。</li>
+                <li><strong>派生データ</strong>：上記データから当社の AI モデルによって生成される文字起こし、埋め込みベクトル、記憶グラフ、要約、インサイトなど。</li>
+            </ul>
+
+            <p>
+                カメラやマイクなどの特定のセンサーや記録モードは、デバイスまたはシステム設定でオン／オフを選択できます。
+                法律上必要な場合には、これらの機能へアクセスする前にお客様の同意を取得します。
+            </p>
+
+            <h2>2. 情報の利用目的</h2>
+            <p>当社は収集した情報を次の目的で利用します。</p>
+            <ul>
+                <li>本サービスの提供・運営・維持のため。</li>
+                <li>お客様の指示に基づき、検索可能な記憶グラフ、文字起こし、インサイトを生成するため。</li>
+                <li>体験をパーソナライズし、関連するリマインダーやコンテンツを提示するため。</li>
+                <li>パフォーマンスの監視、不具合の修正、信頼性とセキュリティの向上のため。</li>
+                <li>新機能・新モデル・新製品の開発のため。</li>
+                <li>法的義務の遵守および利用規約の履行のため。</li>
+            </ul>
+
+            <h2>3. データの処理と保存</h2>
+            <p>
+                当社は、可能な限りデバイス上や、暗号化・光学エンコーディングなどのプライバシー保護技術を用いてデータを処理することを目指しています。
+                バックアップや高度な解析のためにデータをサーバーへ送信する必要がある場合には、可能な範囲で通信経路および保存時に暗号化を行います。
+            </p>
+            <p>
+                個人情報は、本サービスの提供に必要な期間、または法令上必要な期間、もしくはお客様から削除要請があるまでのいずれか長い期間に限り保持し、
+                その後は適用法令に従い削除または匿名化します。
+            </p>
+
+            <h2>4. 情報の共有</h2>
+            <p>当社は、お客様の個人情報を販売することはありません。以下の限られた場合にのみ第三者と共有します。</p>
+            <ul>
+                <li>本サービスの運営・保守・分析を支援する信頼できるサービスプロバイダーとの共有（契約上の秘密保持・セキュリティ義務を課します）。</li>
+                <li>お客様の同意または指示に基づく共有（例：データを第三者アプリへエクスポートまたは共有する場合）。</li>
+                <li>適用される法律・規制・法的手続き・政府機関の要請への対応。</li>
+                <li>法令で認められる範囲で、LightMind・ユーザー・一般市民の権利、財産、安全を保護するため。</li>
+                <li>合併、買収、資金調達、事業の全部または一部の譲渡などの取引に関連する場合（適切な保護措置を講じた上で共有します）。</li>
+            </ul>
+
+            <h2>5. お客様の権利と選択肢</h2>
+            <p>お客様のお住まいの地域および適用法令に応じて、以下の権利を有する場合があります。</p>
+            <ul>
+                <li>当社が保有するお客様の個人情報へのアクセスを求める権利。</li>
+                <li>不正確または不完全な個人情報の訂正を求める権利。</li>
+                <li>法令が認める範囲で、個人情報の削除を求める権利。</li>
+                <li>特定の処理活動に対して異議を唱えたり、制限を求める権利。</li>
+                <li>同意に基づく処理（特定のオプション機能など）について、いつでも同意を撤回する権利。</li>
+            </ul>
+            <p>
+                これらの権利を行使するには、<a href="mailto:contact@lightmind.art">contact@lightmind.art</a> までご連絡ください。
+                お問い合わせ内容に応じて、本人確認をお願いする場合があります。
+            </p>
+
+            <h2>6. 子どものプライバシー</h2>
+            <p>
+                本サービスは、13 歳未満（または適用法令で定められるより高い年齢）の子どもを対象としていません。
+                当社は、そのような子どもの個人情報を意図的に収集することはありません。
+            </p>
+            <p>
+                当社が本ポリシーに反して子どもの情報を収集していると思われる場合は、速やかに対処できるようご連絡ください。
+            </p>
+
+            <h2>7. 国際的なデータ移転</h2>
+            <p>
+                お客様の情報は、お客様がお住まいの国以外に所在するサーバーで処理・保存される場合があります。
+                その国のデータ保護法は、お客様の居住国の法令と異なる可能性があります。
+                法令で要求される場合、当社はこうした移転に際し適切な保護措置を講じます。
+            </p>
+
+            <h2>8. セキュリティ</h2>
+            <p>
+                当社は、暗号化、アクセス制御、セキュリティ監視などの技術的および組織的措置を通じてお客様の情報を保護します。
+                ただし、完全に安全なシステムは存在せず、あらゆる状況での完全な安全性を保証することはできません。
+            </p>
+
+            <h2>9. 本ポリシーの変更</h2>
+            <p>
+                当社は、本プライバシーポリシーを随時更新することがあります。
+                変更を行った場合は、本ページ上部の「最終更新日」を更新します。
+                重要な変更がある場合は、アプリ内通知やメールなどで追加のお知らせを行うことがあります。
+                変更後も引き続き本サービスをご利用になることで、お客様は更新後のポリシーに同意したものとみなされます。
+            </p>
+
+            <h2>10. お問い合わせ</h2>
+            <p>本プライバシーポリシーまたは当社のデータ取扱いについてご質問やご懸念がある場合は、以下までご連絡ください。</p>
+            <p>
+                メール：<a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                ウェブサイト：<a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="ko" lang="ko">
+            <h1>개인정보 처리방침</h1>
+            <div class="meta">
+                최종 업데이트: 2025년 3월 1일
+            </div>
+
+            <p>
+                본 개인정보 처리방침은 LightMind(“당사”)가 LightMind 앱, 웨어러블 기기 및 관련 웹사이트(통칭하여 “서비스”)를
+                제공하는 과정에서 정보를 어떻게 수집·이용·보호하는지에 대해 설명합니다.
+            </p>
+
+            <h2>1. 수집하는 정보</h2>
+            <p>서비스 이용 방식에 따라 당사는 다음과 같은 정보를 수집할 수 있습니다.</p>
+            <ul>
+                <li><strong>계정 정보</strong>: 이름, 이메일 주소, 인증 관련 정보 등.</li>
+                <li><strong>이용 정보</strong>: 앱 내 상호작용 기록, 설정, 기능 사용 내역 등.</li>
+                <li><strong>디바이스 정보</strong>: 하드웨어 모델, 운영체제, 고유 기기 식별자, 진단 데이터 등.</li>
+                <li><strong>음성·영상 데이터</strong>: 녹화 기능을 활성화한 경우, LightMind 기기 또는 앱이 수집하는 주변 영상 및 음성.</li>
+                <li><strong>파생 데이터</strong>: 위 정보로부터 당사의 AI 모델이 생성하는 텍스트 전사, 임베딩, 메모리 그래프, 요약 및 인사이트 등.</li>
+            </ul>
+
+            <p>
+                카메라, 마이크 등 특정 센서나 기록 모드는 디바이스 또는 시스템 설정에서 사용 여부를 선택할 수 있습니다.
+                법에서 요구하는 경우, 당사는 해당 기능에 접근하기 전에 사용자의 동의를 요청합니다.
+            </p>
+
+            <h2>2. 정보 이용 목적</h2>
+            <p>당사는 수집한 정보를 다음과 같은 목적으로 이용합니다.</p>
+            <ul>
+                <li>서비스 제공, 운영 및 유지.</li>
+                <li>사용자의 지시에 따라 검색 가능한 메모리 그래프, 전사 및 인사이트 생성.</li>
+                <li>사용자 경험 개인화 및 관련 알림·콘텐츠 제공.</li>
+                <li>성능 모니터링, 오류 수정 및 안정성과 보안 향상.</li>
+                <li>새로운 기능, 모델 및 제품 개발.</li>
+                <li>법적 의무 준수 및 약관 이행.</li>
+            </ul>
+
+            <h2>3. 데이터 처리 및 보관</h2>
+            <p>
+                당사의 목표는 가능한 한 많은 데이터를 기기 내에서 또는 암호화·광학 인코딩과 같은 프라이버시 보호 기술을 통해 처리하는 것입니다.
+                백업이나 고급 분석을 위해 서버로 데이터를 전송해야 하는 경우, 기술적으로 가능한 범위에서 전송 중 및 저장 시 암호화를 적용합니다。
+            </p>
+            <p>
+                개인 정보는 서비스 제공에 필요한 기간, 법적 의무 이행에 필요한 기간 또는 사용자가 삭제를 요청할 때까지, 관련 법률이 허용하는 범위 내에서 보관합니다。
+            </p>
+
+            <h2>4. 정보 공유</h2>
+            <p>당사는 사용자의 개인 정보를 판매하지 않습니다. 다음과 같은 제한된 경우에만 정보를 공유합니다.</p>
+            <ul>
+                <li>서비스 운영·유지·분석을 지원하는 신뢰할 수 있는 서비스 제공업체와 공유(계약상 비밀 유지 및 보안 의무 부과).</li>
+                <li>사용자의 동의 또는 요청에 따른 공유(예: 데이터를 제3자 애플리케이션으로 내보내거나 공유하는 경우).</li>
+                <li>관련 법률, 규정, 법적 절차 또는 정부 요청에 따른 대응.</li>
+                <li>법이 허용하는 범위에서 LightMind, 사용자 또는 대중의 권리·재산·안전을 보호하기 위해 필요한 경우.</li>
+                <li>합병, 인수, 투자유치 또는 사업의 전부 또는 일부 매각 등 거래와 관련된 경우(적절한 보호 조치를 전제로 공유).</li>
+            </ul>
+
+            <h2>5. 이용자의 권리와 선택</h2>
+            <p>거주 지역 및 적용 법률에 따라, 이용자는 다음과 같은 권리를 가질 수 있습니다.</p>
+            <ul>
+                <li>당사가 보유한 본인에 관한 개인 정보 열람 요청.</li>
+                <li>부정확하거나 불완전한 개인 정보의 정정 요청。</li>
+                <li>법에서 허용하는 범위 내에서 개인 정보 삭제 요청。</li>
+                <li>특정 처리 활동에 대한 반대 또는 제한 요청。</li>
+                <li>동의에 기반한 처리(특정 선택 기능 등)에 대해 언제든지 동의를 철회할 권리。</li>
+            </ul>
+            <p>
+                위 권리를 행사하려면 <a href="mailto:contact@lightmind.art">contact@lightmind.art</a> 로 연락해 주십시오。
+                요청을 처리하기 전에 본인 여부 확인을 요청할 수 있습니다。
+            </p>
+
+            <h2>6. 아동의 개인정보</h2>
+            <p>
+                본 서비스는 만 13세 미만(또는 적용 법령상 더 높은 연령 기준)의 아동을 대상으로 하지 않으며,
+                당사는 해당 연령대 아동의 개인 정보를 고의로 수집하지 않습니다。
+            </p>
+            <p>
+                당사가 본 방침을 위반하여 아동의 정보를 수집했다고 판단되는 경우, 적절한 조치를 취할 수 있도록 연락해 주시기 바랍니다。
+            </p>
+
+            <h2>7. 국제 데이터 이전</h2>
+            <p>
+                이용자의 정보는 거주 국가 외의 서버에서 처리·저장될 수 있으며,
+                해당 국가의 데이터 보호법은 이용자의 국가와 다를 수 있습니다。
+                법에서 요구하는 경우, 당사는 이러한 이전 과정에서 적절한 보호 조치를 시행합니다。
+            </p>
+
+            <h2>8. 보안</h2>
+            <p>
+                당사는 암호화, 접근 제어, 보안 모니터링 등 기술적·조직적 조치를 통해 이용자의 정보를 보호합니다。
+                그러나 어떤 시스템도 완전한 보안을 보장할 수 없으므로, 절대적인 안전성을 약속할 수는 없습니다。
+            </p>
+
+            <h2>9. 본 방침의 변경</h2>
+            <p>
+                당사는 필요에 따라 본 개인정보 처리방침을 업데이트할 수 있습니다。
+                변경 시, 페이지 상단의 “최종 업데이트” 날짜를 수정합니다。
+                중요한 변경이 있는 경우, 앱 내 알림 또는 이메일 등으로 별도의 안내를 제공할 수 있습니다。
+                변경 후에도 서비스를 계속 이용하실 경우, 변경된 방침에 동의한 것으로 간주됩니다。
+            </p>
+
+            <h2>10. 문의하기</h2>
+            <p>본 개인정보 처리방침 또는 당사의 데이터 처리 관행에 대해 문의나 우려 사항이 있는 경우 아래로 연락해 주십시오。</p>
+            <p>
+                이메일: <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                웹사이트: <a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="vi" lang="vi">
+            <h1>Chính sách quyền riêng tư</h1>
+            <div class="meta">
+                Cập nhật lần cuối: 1 tháng 3, 2025
+            </div>
+
+            <p>
+                Chính sách Quyền riêng tư này giải thích cách LightMind (“chúng tôi”) thu thập, sử dụng và bảo vệ
+                thông tin khi bạn sử dụng các sản phẩm và dịch vụ của chúng tôi, bao gồm ứng dụng LightMind, thiết bị đeo
+                và các trang web liên quan (gọi chung là “Dịch vụ”).
+            </p>
+
+            <h2>1. Thông tin chúng tôi thu thập</h2>
+            <p>Tùy thuộc vào cách bạn sử dụng Dịch vụ, chúng tôi có thể thu thập:</p>
+            <ul>
+                <li><strong>Thông tin tài khoản</strong>, như tên, địa chỉ email và thông tin xác thực.</li>
+                <li><strong>Thông tin sử dụng</strong>, như tương tác trong ứng dụng, cài đặt và mức độ sử dụng tính năng.</li>
+                <li><strong>Thông tin thiết bị</strong>, như mẫu thiết bị, hệ điều hành, định danh thiết bị và dữ liệu chẩn đoán.</li>
+                <li><strong>Dữ liệu âm thanh và hình ảnh</strong> được thiết bị hoặc ứng dụng LightMind ghi lại (ví dụ: môi trường xung quanh bạn) khi bạn bật các chức năng ghi.</li>
+                <li><strong>Dữ liệu suy diễn</strong>, như bản chép lời, embedding, đồ thị ký ức, bản tóm tắt hoặc insight được tạo bởi mô hình AI của chúng tôi.</li>
+            </ul>
+
+            <p>
+                Bạn có thể chọn bật hoặc tắt các cảm biến hay chế độ ghi nhất định (như camera hoặc micro) trong cài đặt thiết bị hoặc hệ thống.
+                Khi pháp luật yêu cầu, chúng tôi sẽ xin phép bạn trước khi truy cập các chức năng này。
+            </p>
+
+            <h2>2. Cách chúng tôi sử dụng thông tin</h2>
+            <p>Chúng tôi sử dụng thông tin thu thập được để:</p>
+            <ul>
+                <li>Cung cấp, vận hành và duy trì Dịch vụ.</li>
+                <li>Tạo các đồ thị ký ức có thể tìm kiếm, bản chép lời và insight theo yêu cầu của bạn.</li>
+                <li>Cá nhân hóa trải nghiệm và đưa ra các nhắc nhở hoặc nội dung phù hợp.</li>
+                <li>Giám sát hiệu năng, sửa lỗi và cải thiện độ ổn định, bảo mật.</li>
+                <li>Phát triển tính năng, mô hình và sản phẩm mới。</li>
+                <li>Tuân thủ nghĩa vụ pháp lý và thực thi các điều khoản của chúng tôi。</li>
+            </ul>
+
+            <h2>3. Xử lý và lưu trữ dữ liệu</h2>
+            <p>
+                Mục tiêu của chúng tôi là xử lý dữ liệu càng nhiều càng tốt ngay trên thiết bị hoặc thông qua các kỹ thuật bảo vệ quyền riêng tư
+                như mã hóa và mã hóa quang học。 Khi dữ liệu được gửi lên máy chủ của chúng tôi (ví dụ để sao lưu hoặc phân tích nâng cao),
+                chúng tôi áp dụng mã hóa trong quá trình truyền và khi lưu trữ nếu khả thi về mặt kỹ thuật。
+            </p>
+            <p>
+                Chúng tôi lưu giữ dữ liệu cá nhân trong thời gian cần thiết để cung cấp Dịch vụ cho bạn, để tuân thủ pháp luật
+                hoặc cho đến khi bạn yêu cầu xóa, tùy điều kiện nào đến sau, phù hợp với yêu cầu lưu trữ theo luật hiện hành。
+            </p>
+
+            <h2>4. Chia sẻ thông tin</h2>
+            <p>Chúng tôi không bán thông tin cá nhân của bạn。 Chúng tôi chỉ chia sẻ thông tin trong các trường hợp hạn chế sau:</p>
+            <ul>
+                <li>Với các nhà cung cấp dịch vụ đáng tin cậy hỗ trợ vận hành, duy trì hoặc phân tích Dịch vụ, theo các cam kết bảo mật và bảo vệ dữ liệu bằng hợp đồng。</li>
+                <li>Theo sự đồng ý hoặc yêu cầu của bạn, ví dụ khi bạn xuất hoặc chia sẻ dữ liệu với ứng dụng bên thứ ba。</li>
+                <li>Để tuân thủ luật pháp, quy định, quy trình pháp lý hoặc yêu cầu của cơ quan nhà nước。</li>
+                <li>Để bảo vệ quyền lợi, tài sản hoặc an toàn của LightMind, người dùng hoặc cộng đồng, trong phạm vi luật pháp cho phép。</li>
+                <li>Trong bối cảnh sáp nhập, mua lại, huy động vốn hoặc bán toàn bộ hay một phần hoạt động kinh doanh của chúng tôi, với các biện pháp bảo vệ thích hợp。</li>
+            </ul>
+
+            <h2>5. Quyền và lựa chọn của bạn</h2>
+            <p>Tùy theo nơi bạn sinh sống và luật áp dụng, bạn có thể có quyền:</p>
+            <ul>
+                <li>Yêu cầu truy cập bản sao thông tin cá nhân mà chúng tôi lưu giữ về bạn。</li>
+                <li>Yêu cầu sửa các thông tin cá nhân không chính xác hoặc chưa đầy đủ。</li>
+                <li>Yêu cầu xóa dữ liệu cá nhân của bạn, trong phạm vi luật pháp cho phép。</li>
+                <li>Phản đối hoặc yêu cầu hạn chế một số hình thức xử lý dữ liệu。</li>
+                <li>Rút lại sự đồng ý trong các trường hợp xử lý dựa trên sự đồng ý (ví dụ một số tính năng tùy chọn)。</li>
+            </ul>
+            <p>
+                Bạn có thể gửi yêu cầu qua email <a href="mailto:contact@lightmind.art">contact@lightmind.art</a>。
+                Chúng tôi có thể cần xác minh danh tính của bạn trước khi xử lý yêu cầu。
+            </p>
+
+            <h2>6. Quyền riêng tư của trẻ em</h2>
+            <p>
+                Dịch vụ không được thiết kế cho trẻ em dưới 13 tuổi (hoặc độ tuổi cao hơn nếu pháp luật địa phương quy định) và
+                chúng tôi không cố ý thu thập thông tin cá nhân từ nhóm đối tượng này。
+            </p>
+            <p>
+                Nếu bạn cho rằng chúng tôi đã thu thập thông tin về trẻ em trái với Chính sách này, vui lòng liên hệ với chúng tôi để được xử lý kịp thời。
+            </p>
+
+            <h2>7. Chuyển dữ liệu quốc tế</h2>
+            <p>
+                Thông tin của bạn có thể được xử lý và lưu trữ trên các máy chủ đặt tại các quốc gia khác với nơi bạn sinh sống。
+                Các quốc gia này có thể có luật bảo vệ dữ liệu khác với quốc gia của bạn。
+                Khi pháp luật yêu cầu, chúng tôi sẽ áp dụng các biện pháp bảo vệ phù hợp để bảo đảm an toàn cho dữ liệu trong quá trình chuyển giao。
+            </p>
+
+            <h2>8. Bảo mật</h2>
+            <p>
+                Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức nhằm bảo vệ thông tin của bạn, bao gồm mã hóa, kiểm soát truy cập và giám sát bảo mật。
+                Tuy nhiên, không có hệ thống nào tuyệt đối an toàn, và chúng tôi không thể đảm bảo an ninh tuyệt đối cho dữ liệu。
+            </p>
+
+            <h2>9. Thay đổi đối với Chính sách này</h2>
+            <p>
+                Chúng tôi có thể cập nhật Chính sách Quyền riêng tư này theo thời gian。 Khi có thay đổi, chúng tôi sẽ cập nhật ngày “Cập nhật lần cuối”
+                ở đầu trang。 Nếu có thay đổi quan trọng, chúng tôi có thể gửi thêm thông báo (ví dụ trong ứng dụng hoặc qua email)。
+                Việc bạn tiếp tục sử dụng Dịch vụ sau khi thay đổi có hiệu lực đồng nghĩa với việc bạn chấp nhận Chính sách mới。
+            </p>
+
+            <h2>10. Liên hệ</h2>
+            <p>Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào về Chính sách Quyền riêng tư này hoặc cách chúng tôi xử lý dữ liệu, vui lòng liên hệ:</p>
+            <p>
+                Email: <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                Website: <a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="ar" lang="ar" dir="rtl">
+            <h1>سياسة الخصوصية</h1>
+            <div class="meta">
+                آخر تحديث: 1 مارس 2025
+            </div>
+
+            <p>
+                توضح سياسة الخصوصية هذه كيف تقوم LightMind ("نحن") بجمع معلوماتك واستخدامها وحمايتها عند استخدامك
+                لمنتجاتنا وخدماتنا، بما في ذلك تطبيق LightMind وجهازه القابل للارتداء والمواقع الإلكترونية ذات الصلة
+                (ويُشار إليها مجتمعة باسم "الخدمات").
+            </p>
+
+            <h2>1. المعلومات التي نجمعها</h2>
+            <p>وفقاً لطريقة استخدامك للخدمات، قد نجمع الأنواع التالية من المعلومات:</p>
+            <ul>
+                <li><strong>معلومات الحساب</strong> مثل اسمك وعنوان بريدك الإلكتروني ومعلومات المصادقة.</li>
+                <li><strong>معلومات الاستخدام</strong> مثل تفاعلاتك داخل التطبيق وإعداداتك وطريقة استخدامك للميزات.</li>
+                <li><strong>معلومات الجهاز</strong> مثل طراز الجهاز ونظام التشغيل ومعرّفات الجهاز الفريدة وبيانات التشخيص.</li>
+                <li><strong>البيانات الصوتية والمرئية</strong> التي يلتقطها جهاز أو تطبيق LightMind (مثل تسجيلات البيئة المحيطة) عندما تقوم بتفعيل ميزات الالتقاط.</li>
+                <li><strong>البيانات المشتقة</strong> مثل النصوص المفرّغة، والتمثيلات المتجهية، وخرائط الذكريات، والملخصات، والرؤى التي تنشئها نماذج الذكاء الاصطناعي لدينا من هذه البيانات.</li>
+            </ul>
+
+            <p>
+                يمكنك اختيار تفعيل أو تعطيل بعض المستشعرات أو أوضاع التسجيل (مثل الكاميرا أو الميكروفون) من إعدادات الجهاز أو النظام。
+                وعندما يقتضي القانون ذلك، سنطلب موافقتك قبل الوصول إلى هذه الميزات。
+            </p>
+
+            <h2>2. كيفية استخدامنا للمعلومات</h2>
+            <p>نستخدم المعلومات التي نجمعها من أجل:</p>
+            <ul>
+                <li>تقديم الخدمات وتشغيلها وصيانتها。</li>
+                <li>إنشاء خرائط ذكريات قابلة للبحث ونصوص ورؤى وفقاً لتوجيهاتك。</li>
+                <li>تخصيص تجربتك وتقديم تذكيرات ومحتوى ذي صلة。</li>
+                <li>مراقبة الأداء وإصلاح الأعطال وتحسين الموثوقية والأمان。</li>
+                <li>تطوير ميزات ونماذج ومنتجات جديدة。</li>
+                <li>الامتثال للالتزامات القانونية وتطبيق شروط الاستخدام الخاصة بنا。</li>
+            </ul>
+
+            <h2>3. معالجة البيانات وتخزينها</h2>
+            <p>
+                هدفنا هو معالجة أكبر قدر ممكن من البيانات على الجهاز نفسه أو باستخدام تقنيات تحافظ على الخصوصية مثل
+                التشفير والترميز البصري。 وعندما يتم إرسال البيانات إلى خوادمنا (مثلاً للنسخ الاحتياطي أو التحليل المتقدم)،
+                نستخدم التشفير أثناء النقل وعند التخزين كلما كان ذلك ممكناً من الناحية التقنية。
+            </p>
+            <p>
+                نحتفظ بالمعلومات الشخصية للمدة اللازمة لتقديم الخدمات لك أو للمدة التي يفرضها القانون
+                أو حتى تطلب حذفها، أيها يأتي لاحقاً، مع مراعاة متطلبات الاحتفاظ القانونية المطبقة。
+            </p>
+
+            <h2>4. مشاركة المعلومات</h2>
+            <p>لا نبيع معلوماتك الشخصية。 قد نشارك المعلومات في حالات محدودة، بما في ذلك:</p>
+            <ul>
+                <li>مع مزودي خدمات موثوق بهم يساعدوننا في تشغيل الخدمات وصيانتها وتحليلها، بموجب التزامات تعاقدية بالسرية والأمان。</li>
+                <li>بموافقتك أو بناءً على توجيهك، على سبيل المثال عندما تقوم بتصدير بياناتك أو مشاركتها مع تطبيقات تابعة لجهات خارجية。</li>
+                <li>للامتثال للقانون المعمول به أو اللوائح أو الإجراءات القانونية أو طلبات الجهات الحكومية。</li>
+                <li>لحماية حقوق أو ممتلكات أو سلامة LightMind أو مستخدمينا أو الجمهور، في الحدود التي يجيزها القانون。</li>
+                <li>في سياق عملية دمج أو استحواذ أو تمويل أو بيع كلي أو جزئي لأعمالنا، مع اتخاذ الضمانات المناسبة。</li>
+            </ul>
+
+            <h2>5. حقوقك واختياراتك</h2>
+            <p>وفقاً لمكان إقامتك والقانون المطبق، قد تكون لك الحقوق التالية:</p>
+            <ul>
+                <li>طلب الوصول إلى نسخة من معلوماتك الشخصية التي نحتفظ بها。</li>
+                <li>طلب تصحيح المعلومات الشخصية غير الدقيقة أو غير الكاملة。</li>
+                <li>طلب حذف معلوماتك الشخصية، في الحدود التي يسمح بها القانون。</li>
+                <li>الاعتراض على بعض أنشطة المعالجة أو طلب تقييدها。</li>
+                <li>سحب موافقتك عندما تكون المعالجة قائمة على الموافقة (مثل بعض الميزات الاختيارية)。</li>
+            </ul>
+            <p>
+                يمكنك ممارسة هذه الحقوق من خلال التواصل معنا على البريد الإلكتروني
+                <a href="mailto:contact@lightmind.art">contact@lightmind.art</a>。
+                قد نحتاج إلى التحقق من هويتك قبل معالجة طلبك。
+            </p>
+
+            <h2>6. خصوصية الأطفال</h2>
+            <p>
+                الخدمات غير موجهة للأطفال دون سن 13 عاماً (أو سن أعلى إذا تطلب القانون المحلي ذلك)،
+                ولا نقوم عمداً بجمع معلومات شخصية من هذه الفئة العمرية。
+            </p>
+            <p>
+                إذا كنت تعتقد أننا جمعنا معلومات عن طفل بما يخالف هذه السياسة، يرجى الاتصال بنا حتى نتمكن من اتخاذ الإجراءات المناسبة。
+            </p>
+
+            <h2>7. النقل الدولي للبيانات</h2>
+            <p>
+                قد تتم معالجة معلوماتك وتخزينها على خوادم موجودة في دول أخرى غير الدولة التي تقيم فيها。
+                وقد تخضع هذه الدول لقوانين حماية بيانات تختلف عن القوانين المطبقة في بلدك。
+                عندما يقتضي الأمر، نعتمد ضمانات مناسبة لحماية معلوماتك أثناء نقلها عبر الحدود。
+            </p>
+
+            <h2>8. الأمان</h2>
+            <p>
+                نستخدم إجراءات تقنية وتنظيمية مصممة لحماية معلوماتك، بما في ذلك التشفير وضوابط الوصول والمراقبة الأمنية。
+                ومع ذلك، لا يوجد نظام آمن تماماً، ولا يمكننا ضمان أمان مطلق لبياناتك。
+            </p>
+
+            <h2>9. تغييرات على هذه السياسة</h2>
+            <p>
+                قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر。 عند إجراء تغييرات، نقوم بتحديث تاريخ "آخر تحديث" في أعلى الصفحة。
+                وإذا كانت التغييرات جوهرية، فقد نقدم إشعاراً إضافياً (مثلاً داخل التطبيق أو عبر البريد الإلكتروني)。
+                إن استمرارك في استخدام الخدمات بعد سريان التغييرات يعني موافقتك على السياسة المحدّثة。
+            </p>
+
+            <h2>10. كيفية التواصل معنا</h2>
+            <p>إذا كانت لديك أي أسئلة أو استفسارات بخصوص سياسة الخصوصية هذه أو ممارساتنا في معالجة البيانات، يرجى التواصل معنا：</p>
+            <p>
+                البريد الإلكتروني: <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                الموقع الإلكتروني: <a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="fr" lang="fr">
+            <h1>Politique de confidentialité</h1>
+            <div class="meta">
+                Dernière mise à jour : 1 mars 2025
+            </div>
+
+            <p>
+                La présente Politique de confidentialité explique comment LightMind (« nous ») collecte, utilise et protège
+                vos informations lorsque vous utilisez nos produits et services, y compris l’application LightMind, le dispositif portable
+                et les sites web associés (ensemble, les « Services »).
+            </p>
+
+            <h2>1. Informations que nous collectons</h2>
+            <p>Selon la manière dont vous utilisez les Services, nous pouvons collecter :</p>
+            <ul>
+                <li><strong>Informations de compte</strong>, telles que votre nom, votre adresse e‑mail et vos données d’authentification。</li>
+                <li><strong>Informations d’utilisation</strong>, telles que vos interactions avec l’application, vos paramètres et l’usage des fonctionnalités。</li>
+                <li><strong>Informations sur l’appareil</strong>, telles que le modèle matériel, le système d’exploitation, les identifiants uniques et les données de diagnostic。</li>
+                <li><strong>Données audio et visuelles</strong> capturées par le dispositif ou l’application LightMind (par exemple, votre environnement) lorsque vous activez les fonctions d’enregistrement。</li>
+                <li><strong>Données dérivées</strong>, telles que des transcriptions, embeddings, graphes de mémoire, résumés ou analyses produits par nos modèles d’IA。</li>
+            </ul>
+
+            <p>
+                Vous pouvez choisir d’activer ou de désactiver certains capteurs ou modes d’enregistrement (comme la caméra ou le microphone)
+                dans les paramètres de votre appareil ou de votre système。 Lorsque la loi l’exige, nous demanderons votre consentement avant d’accéder à ces fonctionnalités。
+            </p>
+
+            <h2>2. Comment nous utilisons les informations</h2>
+            <p>Nous utilisons les informations collectées pour :</p>
+            <ul>
+                <li>Fournir, exploiter et maintenir les Services。</li>
+                <li>Créer, à votre demande, des graphes de mémoire, transcriptions et insights consultables。</li>
+                <li>Personnaliser votre expérience et vous proposer des rappels ou contenus pertinents。</li>
+                <li>Surveiller les performances, corriger les bugs et améliorer la fiabilité et la sécurité。</li>
+                <li>Développer de nouvelles fonctionnalités, modèles et produits。</li>
+                <li>Respecter nos obligations légales et faire respecter nos conditions d’utilisation。</li>
+            </ul>
+
+            <h2>3. Traitement et conservation des données</h2>
+            <p>
+                Notre objectif est de traiter autant de données que possible sur l’appareil lui‑même ou au moyen de techniques préservant la confidentialité,
+                telles que le chiffrement et le codage optique。 Lorsque des données sont envoyées à nos serveurs (par exemple pour la sauvegarde ou
+                des analyses avancées), nous utilisons le chiffrement pendant le transfert et au repos, dans la mesure du possible。
+            </p>
+            <p>
+                Nous conservons les informations personnelles aussi longtemps que nécessaire pour vous fournir les Services, pour respecter
+                nos obligations légales ou jusqu’à ce que vous demandiez leur suppression, sous réserve des exigences légales de conservation applicables。
+            </p>
+
+            <h2>4. Partage des informations</h2>
+            <p>Nous ne vendons pas vos informations personnelles。 Nous pouvons partager des informations dans les cas limités suivants :</p>
+            <ul>
+                <li>Avec des prestataires de services de confiance qui nous aident à exploiter, maintenir ou analyser les Services, soumis à des obligations contractuelles de confidentialité et de sécurité。</li>
+                <li>Avec votre consentement ou sur votre instruction, par exemple lorsque vous exportez ou partagez des données avec une application tierce。</li>
+                <li>Pour respecter la loi applicable, la réglementation, une procédure judiciaire ou une demande des autorités compétentes。</li>
+                <li>Pour protéger les droits, la propriété ou la sécurité de LightMind, de nos utilisateurs ou du public, dans les limites autorisées par la loi。</li>
+                <li>Dans le cadre d’une fusion, acquisition, opération de financement ou cession de tout ou partie de notre activité, sous réserve de garanties appropriées。</li>
+            </ul>
+
+            <h2>5. Vos droits et choix</h2>
+            <p>Selon votre pays de résidence et la loi applicable, vous pouvez disposer des droits suivants :</p>
+            <ul>
+                <li>Demander l’accès à une copie des informations personnelles que nous détenons à votre sujet。</li>
+                <li>Demander la rectification d’informations personnelles inexactes ou incomplètes。</li>
+                <li>Demander l’effacement de vos informations personnelles, dans les limites prévues par la loi。</li>
+                <li>Vous opposer à certains traitements ou demander leur limitation。</li>
+                <li>Retirer votre consentement lorsque le traitement est fondé sur celui‑ci (par exemple pour certaines fonctionnalités optionnelles)。</li>
+            </ul>
+            <p>
+                Vous pouvez exercer ces droits en nous contactant à l’adresse
+                <a href="mailto:contact@lightmind.art">contact@lightmind.art</a>。
+                Nous pourrons être amenés à vérifier votre identité avant de traiter votre demande。
+            </p>
+
+            <h2>6. Vie privée des enfants</h2>
+            <p>
+                Les Services ne s’adressent pas aux enfants de moins de 13 ans (ou d’un âge plus élevé lorsque la loi locale l’exige),
+                et nous ne collectons pas sciemment d’informations personnelles auprès de cette tranche d’âge。
+            </p>
+            <p>
+                Si vous pensez que nous avons collecté des informations concernant un enfant en violation de cette Politique,
+                veuillez nous contacter afin que nous puissions prendre les mesures appropriées。
+            </p>
+
+            <h2>7. Transferts internationaux de données</h2>
+            <p>
+                Vos informations peuvent être traitées et stockées sur des serveurs situés dans des pays autres que le vôtre。
+                Ces pays peuvent disposer de lois de protection des données différentes de celles de votre pays。
+                Lorsque cela est requis, nous mettons en place des garanties appropriées pour protéger vos informations lors de ces transferts。
+            </p>
+
+            <h2>8. Sécurité</h2>
+            <p>
+                Nous mettons en œuvre des mesures techniques et organisationnelles destinées à protéger vos informations, notamment le chiffrement,
+                le contrôle d’accès et la surveillance de la sécurité。 Toutefois, aucun système ne peut être totalement sécurisé,
+                et nous ne pouvons pas garantir une sécurité absolue de vos données。
+            </p>
+
+            <h2>9. Modifications de la présente politique</h2>
+            <p>
+                Nous pouvons mettre à jour la présente Politique de confidentialité de temps à autre。 En cas de modification,
+                nous mettrons à jour la date de « Dernière mise à jour » en haut de cette page。
+                Si les changements sont importants, nous pourrons fournir un avis supplémentaire (par exemple dans l’application ou par e‑mail)。
+                Le fait de continuer à utiliser les Services après l’entrée en vigueur des changements vaut acceptation de la politique mise à jour。
+            </p>
+
+            <h2>10. Nous contacter</h2>
+            <p>Si vous avez des questions ou des préoccupations concernant la présente Politique de confidentialité ou nos pratiques en matière de données, vous pouvez nous contacter :</p>
+            <p>
+                E‑mail : <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                Site web : <a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
+
+        <section class="policy" data-lang="es" lang="es">
+            <h1>Política de privacidad</h1>
+            <div class="meta">
+                Última actualización: 1 de marzo de 2025
+            </div>
+
+            <p>
+                Esta Política de privacidad explica cómo LightMind («nosotros») recopila, utiliza y protege
+                la información cuando utilizas nuestros productos y servicios, incluido la app de LightMind,
+                el dispositivo portátil y los sitios web relacionados (conjuntamente, los «Servicios»).
+            </p>
+
+            <h2>1. Información que recopilamos</h2>
+            <p>Según cómo utilices los Servicios, podemos recopilar:</p>
+            <ul>
+                <li><strong>Información de la cuenta</strong>, como tu nombre, dirección de correo electrónico y credenciales de autenticación。</li>
+                <li><strong>Información de uso</strong>, como interacciones dentro de la app, ajustes y uso de funcionalidades。</li>
+                <li><strong>Información del dispositivo</strong>, como el modelo de hardware, sistema operativo, identificadores únicos del dispositivo y datos de diagnóstico。</li>
+                <li><strong>Datos de audio y vídeo</strong> capturados por el dispositivo o la app de LightMind (por ejemplo, tu entorno) cuando activas las funciones de grabación。</li>
+                <li><strong>Datos derivados</strong>, como transcripciones, embeddings, grafos de memoria, resúmenes o insights generados por nuestros modelos de IA。</li>
+            </ul>
+
+            <p>
+                Puedes elegir activar o desactivar determinados sensores o modos de captura (como la cámara o el micrófono)
+                en los ajustes de tu dispositivo o sistema。 Cuando la ley lo exige, solicitaremos tu consentimiento antes de acceder a estas funciones。
+            </p>
+
+            <h2>2. Cómo utilizamos la información</h2>
+            <p>Utilizamos la información recopilada para:</p>
+            <ul>
+                <li>Prestar, operar y mantener los Servicios。</li>
+                <li>Crear, a tu solicitud, grafos de memoria, transcripciones e insights que puedan buscarse。</li>
+                <li>Personalizar tu experiencia y mostrarte recordatorios o contenido relevante。</li>
+                <li>Supervisar el rendimiento, corregir errores y mejorar la fiabilidad y la seguridad。</li>
+                <li>Desarrollar nuevas funcionalidades, modelos y productos。</li>
+                <li>Cumplir con obligaciones legales y hacer cumplir nuestros términos de uso。</li>
+            </ul>
+
+            <h2>3. Tratamiento y almacenamiento de datos</h2>
+            <p>
+                Nuestro objetivo es procesar la mayor cantidad posible de datos directamente en el dispositivo o mediante técnicas que preservan la privacidad,
+                como el cifrado y el codificado óptico。 Cuando los datos se envían a nuestros servidores (por ejemplo, para copias de seguridad o análisis avanzados),
+                aplicamos cifrado en tránsito y en reposo siempre que sea técnicamente posible。
+            </p>
+            <p>
+                Conservamos la información personal durante el tiempo necesario para prestarte los Servicios, para cumplir con obligaciones legales
+                o hasta que solicites su eliminación, sujeto a los requisitos legales de conservación aplicables。
+            </p>
+
+            <h2>4. Compartición de información</h2>
+            <p>No vendemos tu información personal。 Podemos compartir información únicamente en las siguientes circunstancias limitadas:</p>
+            <ul>
+                <li>Con proveedores de servicios de confianza que nos ayudan a operar, mantener o analizar los Servicios, bajo obligaciones contractuales de confidencialidad y seguridad。</li>
+                <li>Con tu consentimiento o a tu petición, por ejemplo cuando exportas o compartes datos con una aplicación de terceros。</li>
+                <li>Para cumplir con las leyes aplicables, normativas, procesos legales o solicitudes de las autoridades competentes。</li>
+                <li>Para proteger los derechos, la propiedad o la seguridad de LightMind, de nuestros usuarios o del público, en la medida permitida por la ley。</li>
+                <li>En el contexto de una fusión, adquisición, financiación o venta de la totalidad o parte de nuestro negocio, con las salvaguardas apropiadas。</li>
+            </ul>
+
+            <h2>5. Tus derechos y opciones</h2>
+            <p>Dependiendo de tu país de residencia y de la legislación aplicable, puedes tener derecho a:</p>
+            <ul>
+                <li>Solicitar acceso a una copia de la información personal que conservamos sobre ti。</li>
+                <li>Solicitar la rectificación de información personal inexacta o incompleta。</li>
+                <li>Solicitar la eliminación de tu información personal, en la medida permitida por la ley。</li>
+                <li>Oponerte a determinados tipos de tratamiento o solicitar su limitación。</li>
+                <li>Retirar tu consentimiento cuando el tratamiento se base en este (por ejemplo, para determinadas funciones opcionales)。</li>
+            </ul>
+            <p>
+                Puedes ejercer estos derechos contactándonos en
+                <a href="mailto:contact@lightmind.art">contact@lightmind.art</a>。
+                Es posible que necesitemos verificar tu identidad antes de procesar tu solicitud。
+            </p>
+
+            <h2>6. Privacidad de los menores</h2>
+            <p>
+                Los Servicios no están dirigidos a menores de 13 años (o a una edad superior cuando así lo exija la legislación local),
+                y no recopilamos conscientemente información personal de menores en este grupo de edad。
+            </p>
+            <p>
+                Si consideras que hemos recopilado información sobre un menor en contra de lo establecido en esta Política,
+                ponte en contacto con nosotros para que podamos tomar las medidas oportunas。
+            </p>
+
+            <h2>7. Transferencias internacionales de datos</h2>
+            <p>
+                Es posible que tus datos se procesen y almacenen en servidores situados en países distintos al tuyo。
+                Estos países pueden tener leyes de protección de datos diferentes a las de tu país。
+                Cuando sea necesario, implementaremos las salvaguardas adecuadas para proteger tus datos durante dichas transferencias。
+            </p>
+
+            <h2>8. Seguridad</h2>
+            <p>
+                Utilizamos medidas técnicas y organizativas diseñadas para proteger tu información, incluido el cifrado,
+                los controles de acceso y la supervisión de la seguridad。 Sin embargo, ningún sistema es completamente seguro
+                y no podemos garantizar la seguridad absoluta de tus datos。
+            </p>
+
+            <h2>9. Cambios en esta política</h2>
+            <p>
+                Podemos actualizar esta Política de privacidad periódicamente。 Cuando realicemos cambios, actualizaremos la fecha de
+                «Última actualización» en la parte superior de esta página。 Si los cambios son materiales, podremos proporcionar
+                un aviso adicional (por ejemplo, en la app o por correo electrónico)。 El uso continuado de los Servicios después
+                de la entrada en vigor de dichos cambios implica que aceptas la política actualizada。
+            </p>
+
+            <h2>10. Contacto</h2>
+            <p>Si tienes preguntas o dudas sobre esta Política de privacidad o sobre cómo tratamos los datos, puedes contactar con nosotros en:</p>
+            <p>
+                Correo electrónico: <a href="mailto:contact@lightmind.art">contact@lightmind.art</a><br>
+                Sitio web: <a href="https://lightmind.art">https://lightmind.art</a>
+            </p>
+        </section>
     </main>
 
     <footer>
         © 2025 LightMind. All rights reserved.
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var switcher = document.getElementById('language-switcher');
+            if (!switcher) return;
+
+            var policies = document.querySelectorAll('.policy');
+
+            switcher.addEventListener('change', function () {
+                var lang = this.value;
+                policies.forEach(function (section) {
+                    if (section.getAttribute('data-lang') === lang) {
+                        section.classList.add('policy--active');
+                    } else {
+                        section.classList.remove('policy--active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
