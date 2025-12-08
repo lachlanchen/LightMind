@@ -203,9 +203,9 @@
         }
 
         body.theme-light header {
-            background: rgba(255, 255, 255, 0.86);
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.95) 0%, rgba(221, 214, 254, 0.98) 40%, rgba(219, 234, 254, 0.98) 100%);
             border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 14px 40px rgba(148, 163, 184, 0.35);
         }
 
         body.theme-light .logo {
@@ -240,7 +240,7 @@
         }
 
         body.theme-light .hero h1 {
-            background: linear-gradient(135deg, #0f172a 0%, #2563eb 40%, #ec4899 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #00f4ff 50%, #ff00ea 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1399,6 +1399,11 @@
 		            if (toggle) {
 		                toggle.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
 		            }
+
+		            // Re-apply header styling for the active theme
+		            try {
+		                handleHeaderScroll();
+		            } catch (e) {}
 		        }
 
 		        function resolveInitialTheme() {
@@ -1472,17 +1477,31 @@
             });
         }
 
-        // Header scroll effect
-        function handleHeaderScroll() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
-                header.style.borderBottom = '1px solid rgba(0, 244, 255, 0.2)';
-            } else {
-                header.style.background = 'rgba(10, 10, 10, 0.8)';
-                header.style.borderBottom = 'none';
-            }
-        }
+	        // Header scroll effect
+	        function handleHeaderScroll() {
+	            const header = document.querySelector('header');
+	            if (!header) return;
+
+	            const body = document.body;
+	            const isLight = body && body.classList.contains('theme-light');
+
+	            // For light theme, keep the vivid gradient defined in CSS;
+	            // only dark theme uses a dynamic scroll effect.
+	            if (isLight) {
+	                header.style.background = '';
+	                header.style.borderBottom = '';
+	                header.style.boxShadow = '';
+	                return;
+	            }
+
+	            if (window.scrollY > 100) {
+	                header.style.background = 'rgba(10, 10, 10, 0.95)';
+	                header.style.borderBottom = '1px solid rgba(0, 244, 255, 0.2)';
+	            } else {
+	                header.style.background = 'rgba(10, 10, 10, 0.8)';
+	                header.style.borderBottom = 'none';
+	            }
+	        }
 
 		        // Initialize everything
 		        document.addEventListener('DOMContentLoaded', function() {
