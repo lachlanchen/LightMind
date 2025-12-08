@@ -1,0 +1,384 @@
+## Slide 1: All-day Multimodal Intelligent Memory Platform
+
+- Light your Mind with Light
+- 用光轻盈你的记忆
+- Presented by: Yuzhe Zhang
+- CEO & Founder
+- Dec, 2025
+
+## Slide 2: We are Raising
+
+- 1.5 million HKD
+- 40%
+- Core AI Platform, Models
+- &
+- Cloud
+- 35%
+- Wearable &
+- Optical Module
+- 10%
+- Pilot Build & Manufacturing
+- 15%
+- Pilot Deployment, Compliance &
+- Revenue Enablement
+- Closed-Loop & Architecture:
+- Device
+- -side LM-M1
+- &
+- Cloud memory
+- platform
+- & App platform
+- full-stack system is operational
+- Core Barriers Verified:
+- Optical computing completed
+- mature software-hardware collaboration
+- low power and privacy security
+- Large-scale Validation Phase:
+- Demo functional prototypes completed
+- Next step: pilot production & subscription conversion
+- Financing Plan: Scaling Hardware & AI, Go-to-Market
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 9
+
+## Slide 3: Milestones & Go-to-Market Plan
+
+- Milestone
+- Q1
+- Q2
+- Q3
+- Q4
+- Product Launch
+- Internal alpha;
+- Pilot workflow
+- Internal deployment
+- External pilot; Subscription beta
+- Go-to-market packaging & Paid conversion
+- Hardware &
+- Manufacturing
+- Enclosure &
+- Engineering samples
+- Functional prototypes;
+- Pilot batch
+- (80~100 units)
+- Freeze BOM;
+- Small-batch production
+- Scale up production; Reliability tuning
+- Core AI Platform
+- (Models & Cloud)
+- Architecture freeze;
+- On-device pipeline v1
+- Memory model v1;
+- RAG / knowledge graph model v1;
+- Iteration + stability hardening
+- V2 optimization; Performance / cost tuning
+- Product Testing
+- End-to-end (device–cloud–app)
+- testing
+- ;
+- Internal beta
+- External pilot testing;
+- Pre-production validation
+- Marketing
+- Social media matrix
+- Content & Multi-patform distribution &
+- Brand Promotion
+- Conversion rate optimization
+- Business Dev &
+- Fundraising
+- Sign pilot partners;
+- Advance seed round
+- Channel scale-up;
+- Next-round metrics
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 10
+
+## Slide 4: Yuzhe Zhang,
+
+- Founder & CEO
+- Rongzhou Chen, Co-Founder & COO
+- Yunfei Tian, CO-Founder & CTO
+- PhD student at The University of Hong Kong, specializing in computational optics, optical sensing and artificial intelligence.
+- First author of research papers published in top international journals and conferences such as
+- Nature, Advanced Materials
+- and
+- CVPR
+- .
+- Former researcher at
+- SenseTime
+- , developing generative-AI–based computational imaging algorithms and frameworks, with extensive experience in both research and product development.
+- PhD student at The University of Hong Kong | Former investment consultant at
+- CHINA SECURITIES
+- | Serial entrepreneur with an interdisciplinary background.
+- Specializes in image and video AI algorithms, with multiple top-tier interdisciplinary publications and patents; previously led projects in biomedical image processing and AI-assisted tumor diagnosis.
+- Tech-finance-entrepreneurship background, focused on deep-tech venture enablement.
+- PhD student at The University of Hong Kong | Formerly at Huawei and Volkswagen.
+- Formerly at
+- Huawei HiSilicon
+- : led localization of key components, closed the loop from R&D to, and improved production yield by 30%.
+- Formerly at Huawei CBG: Algorithm, delivering the “moon mode” for the Huawei Mate and P series.
+- Formerly at Volkswagen Group: Cockpit systems, driving mass production of automotive-grade software and hardware.
+- Core Team Members
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 11
+
+## Slide 5: 访问官方网站
+
+- https://lightmind.art
+- Yuzhe (Ethan) Zhang
+- CEO & Founder
+- P
+- +852 92090923 / +86 17839922386
+- E
+- lightmind@lightmind.art
+- W
+- lightmind.art
+- Thank You
+- Light your Mind with Light
+- 用光轻盈你的记忆
+- Discord
+- LightMind Tech
+- Work WeChat
+
+## Slide 6: Company and Product Introduction
+
+- All-day
+- , Super-power
+- Wearable Devices
+- Optical C
+- omputing
+- and Compression
+- Neuromorphic Optical Encryption
+- Multimodal Large Model Analysis and Memory Graph
+- A personal “
+- digital brain
+- ” that integrates safety records, intelligent search, traceability, reminders, and decision-making.
+- LightMind-M1
+- LightMind is a HKU deep-tech startup focused on multimodal
+- AI memory
+- .
+- Integrate
+- optical
+- computing
+- &
+- acoustic sensing
+- to energy-efficient
+- wearables.
+- B
+- uild a
+- privacy-first
+- digital memory infrastructure for everyone.
+- Strong background
+- in computational imaging,
+- nanophotonics,
+- hardwar
+- e
+- production,
+- algorithm development,
+- and entrepreneurship.
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 1
+
+## Slide 7: Memory Overload
+
+- People now consume
+- ~34 GB
+- of information per day (≈100,000 words).
+- For
+- 4+ billion
+- working-age adults, this overload already fuels a
+- ~$18B
+- team-collaboration market (2024).
+- Hard to Remember
+- and Recall
+- People already spend around
+- $40~45B
+- a year on personal cloud storage, but it only keeps scattered photos and files, not full-day experiences.
+- There is still
+- NO
+- passive,
+- always-on memory device
+- , so most real-world moments are never captured and are quickly forgotten.
+- Privacy Risk
+- Most phones & wearable devices auto-upload raw video/audio to the cloud, exposing both users and bystanders.
+- We need
+- on-sensor optical encryption
+- : capture semantic cues, not recoverable faces.
+- Storage Bottleneck & 24/7 Capture
+- 24/7 HD audio-video means tens of GB per person per day, far beyond today’s wearable power and storage limits.
+- We need
+- optical computing
+- and on-sensor
+- optical compression
+- to cut power and data at the source.
+- Target Market & Pain Points:
+- All-day Multimodal Intelligent
+- Passive Recording
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 2
+
+## Slide 8: LightMind
+
+- — your always-on multimodal second brain
+- Semantic timelines — find any moment in seconds
+- Optical encryption — memories locked at the source
+- Photon-level compression — store more with less power
+- Our Solution
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 3
+
+## Slide 9: Our Solution: All-day Multimodal Intelligent Memory Platform
+
+- CMOS Imaging Array
+- Optical Computing and
+- Encoding Chip
+- Dicing and Packaging
+- Integration and Testing
+- On-device Lightweight Audio Processing Model
+- Cloud Optical Latent-Space Memory Large Model
+- RAG-based Memory Knowledge-Graph Construction Model
+- Optical Computing and Neuromorphic Encryption Layer
+- Optical Encoding and Semantic Acquisition & Transmission Layer
+- All-day Multimodal Memory Construction and Retrieval Layer
+- LightMind AI Wearable Hardware Series
+- Mobile and Cloud Multimodal Intelligent Memory Platform
+- LM-Glass
+- LM-O1
+- LM-M1
+- Prototype
+- APP
+- Hardware
+- Software
+- AI Models
+- Infra-
+- structure
+- Optics
+- Fab
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 4
+
+## Slide 10: The market size of
+
+- AI wearables
+- surpass
+- 1.5
+- trillion
+- USD by 2030.
+- Global market of smart wearable devices below 10% across
+- 100+
+- countries
+- .
+- Demand for
+- AI application
+- with a
+- growth rate
+- reach
+- 110%+
+- .
+- Source: GWI 2025
+- Source: Grand View Research
+- The
+- spending
+- on AI software by users sustains a
+- growth rate of
+- 30%+
+- .
+- Source: ABI Research
+- Source: sensor tower
+- Source: Microsoft Work Trend Index
+- High-information-density jobs
+- Other jobs
+- Global h
+- igh-information-density
+- jobs for
+- 30.4%
+- (997M)
+- .
+- Source: Microsoft Work Trend Index
+- On average, employees spend
+- 57%
+- time
+- on
+- communication
+- .
+- Big Market, Strong Spend: AI Wearables on Soaring Demand
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 5
+
+## Slide 11: Source: Center for Missing Children
+
+- Based on 1% coverage of the global child population (approx.
+- 2.415 billion
+- children under 18 worldwide by 2025).
+- 70% reduction
+- in post-meeting collation time;
+- 40% increase
+- in action item completion rate.
+- 2.8 hours
+- saved per day.
+- Source: McKinsey Global Institute
+- 96M young people (
+- 8% ADHD
+- rate) need external support.
+- 50% fewer
+- missed assignments/key points.
+- 30% time
+- cut in review.
+- 2.4
+- million
+- fewer missing children.
+- Approximately
+- 57 million
+- dementia
+- people worldwide, with 10 million new cases each year. Based on 1% coverage.
+- 570,000+
+- elderly safeguarded.
+- Source: World Health Organization
+- Source: World Health Organization
+- Turning Daily Life Into Secure, Searchable, Actionable Memory
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 6
+
+## Slide 12: Core Technology Strength
+
+- Proprietary optical compression + photonic encryption (neural form).
+- High compression, irreversible security, and high efficiency.
+- Cross-Domain Expertise
+- Fusion of optical computing, imaging chips & large models.
+- Experience from lab-to-factory transition (0→1→10).
+- Hardware–Software Synergy
+- Integrated co-design (algorithm / module / process).
+- Fast iteration and scalable manufacturing.
+- Competitive Advantage:
+- Technology & Team & Integration
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 7
+
+## Slide 13: Hardware Sales
+
+- Mass-market pricing; fast scale
+- Key levers: channel efficiency, BOM cost reduction, subscription conversion rate
+- Subscription Services
+- Monthly AI insights
+- Enterprise per-seat tiers, customizable
+- Key metrics: retention, ARPU, penetration
+- 01
+- 02
+- 03
+- Ecosystem Upsell & Partnerships
+- Cloud backup, data analytics, integrations
+- Industry partnerships (Edu/Gov/Enterprise)
+- licensing & revenue share
+- Business Model: Hardware + SaaS & Services + Ecosystem
+- © 2025 LightMind Ltd. • All rights reserved.
+- Confidential
+- 8

@@ -104,6 +104,60 @@
             border-color: #00f4ff;
         }
 
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle-button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 84px;
+            padding: 4px 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            font-size: 0.75rem;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .theme-toggle-button span {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            text-align: center;
+            opacity: 0.65;
+            transition: opacity 0.25s ease;
+        }
+
+        .theme-toggle-button::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            left: 2px;
+            width: calc(50% - 4px);
+            border-radius: 999px;
+            background: linear-gradient(135deg, #00f4ff, #ff00ea);
+            opacity: 0.9;
+            transition: transform 0.25s ease;
+            z-index: 1;
+        }
+
+        .theme-toggle-button[data-theme="light"] .theme-toggle-label-light,
+        .theme-toggle-button[data-theme="dark"] .theme-toggle-label-dark {
+            opacity: 1;
+        }
+
+        .theme-toggle-button[data-theme="dark"]::before {
+            transform: translateX(100%);
+        }
+
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
@@ -129,6 +183,151 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Light theme overrides */
+        body.theme-light {
+            background: radial-gradient(circle at 0% 0%, #fce7f3 0%, transparent 50%),
+                        radial-gradient(circle at 100% 0%, #e0f2fe 0%, transparent 55%),
+                        radial-gradient(circle at 100% 100%, #dcfce7 0%, transparent 55%),
+                        linear-gradient(135deg, #f9fafb 0%, #eef2ff 35%, #e0f2fe 75%, #fdf2ff 100%);
+            color: #0b1020;
+        }
+
+        body.theme-light .particles {
+            opacity: 0.18;
+        }
+
+        body.theme-light .particle {
+            background: radial-gradient(circle at 0 0, #38bdf8, #a855f7);
+        }
+
+        body.theme-light header {
+            background: rgba(255, 255, 255, 0.86);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        body.theme-light .logo {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.theme-light .nav-links a {
+            color: #0f172a;
+        }
+
+        body.theme-light .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        body.theme-light .nav-links a::after {
+            background: linear-gradient(135deg, #2563eb, #ec4899);
+        }
+
+        body.theme-light .lang-selector select {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(15, 23, 42, 0.15);
+            color: #0f172a;
+        }
+
+        body.theme-light .theme-toggle-button {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(15, 23, 42, 0.18);
+            color: #0f172a;
+        }
+
+        body.theme-light .hero h1 {
+            background: linear-gradient(135deg, #0f172a 0%, #2563eb 40%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.theme-light .hero p {
+            opacity: 0.9;
+            color: #0b1120;
+        }
+
+        body.theme-light .cta-button {
+            background: linear-gradient(135deg, #2563eb, #ec4899);
+            color: #f9fafb;
+            box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
+        }
+
+        body.theme-light .product-image img {
+            box-shadow: 0 34px 90px rgba(15, 23, 42, 0.35);
+        }
+
+        body.theme-light .product-info h2,
+        body.theme-light .section-title {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.theme-light .feature-card {
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        body.theme-light .feature-card::before {
+            background: linear-gradient(135deg, #2563eb, #ec4899);
+        }
+
+        body.theme-light .feature-icon {
+            background: linear-gradient(135deg, #2563eb, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.theme-light .feature-card h3 {
+            color: #0f172a;
+        }
+
+        body.theme-light .feature-card p {
+            color: #1f2933;
+            opacity: 0.9;
+        }
+
+        body.theme-light .market-stats .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(37, 99, 235, 0.35);
+        }
+
+        body.theme-light .stat-number {
+            background: linear-gradient(135deg, #2563eb, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.theme-light .stat-label {
+            color: #1f2937;
+        }
+
+        body.theme-light footer {
+            background: rgba(255, 255, 255, 0.96);
+            border-top-color: rgba(15, 23, 42, 0.06);
+            box-shadow: 0 -10px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        body.theme-light .footer-links a {
+            color: #0f172a;
+        }
+
+        body.theme-light .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        body.theme-light .copyright {
+            color: #4b5563;
+            opacity: 0.9;
         }
 
         /* Hero Section */
@@ -429,25 +628,31 @@
         }
     </style>
 </head>
-    <body>
+	    <body class="theme-light">
 	    <!-- Animated Background -->
 	    <div class="particles"></div>
 	
 	    <!-- Header -->
-	    <header>
-	        <nav>
-	            <div class="logo">LightMind</div>
-	            <div class="nav-right">
-	                <ul class="nav-links">
+		    <header>
+		        <nav>
+		            <div class="logo">LightMind</div>
+		            <div class="nav-right">
+		                <ul class="nav-links">
 	                    <li><a href="#features" data-i18n="nav.features">Features</a></li>
 	                    <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
-	                    <li><a href="#market" data-i18n="nav.market">Market</a></li>
-	                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-	                </ul>
-	                <div class="lang-selector">
-	                    <select id="language-switcher">
-	                        <option value="en">English</option>
-	                        <option value="zh-Hans">简体中文</option>
+		                    <li><a href="#market" data-i18n="nav.market">Market</a></li>
+		                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+		                </ul>
+		                <div class="theme-toggle">
+		                    <button id="theme-toggle" class="theme-toggle-button" type="button" aria-label="Toggle color theme" data-theme="light">
+		                        <span class="theme-toggle-label-light">Light</span>
+		                        <span class="theme-toggle-label-dark">Dark</span>
+		                    </button>
+		                </div>
+		                <div class="lang-selector">
+		                    <select id="language-switcher">
+		                        <option value="en">English</option>
+		                        <option value="zh-Hans">简体中文</option>
 	                        <option value="zh-Hant">繁體中文</option>
 	                        <option value="ja">日本語</option>
 	                        <option value="ko">한국어</option>
@@ -1164,23 +1369,67 @@
 	            return "en";
 	        }
 
-	        function setupLanguageSwitcher() {
-	            var switcher = document.getElementById("language-switcher");
-	            if (!switcher) return;
+		        function setupLanguageSwitcher() {
+		            var switcher = document.getElementById("language-switcher");
+		            if (!switcher) return;
+	
+		            switcher.addEventListener("change", function () {
+		                var lang = this.value;
+		                applyLanguage(lang);
+		                try {
+		                    localStorage.setItem("lightmind-landing-lang", lang);
+		                } catch (e) {}
+		            });
+	
+		            var initialLang = resolveInitialLanguage();
+		            applyLanguage(initialLang);
+		        }
 
-	            switcher.addEventListener("change", function () {
-	                var lang = this.value;
-	                applyLanguage(lang);
-	                try {
-	                    localStorage.setItem("lightmind-landing-lang", lang);
-	                } catch (e) {}
-	            });
+		        function applyTheme(theme) {
+		            var body = document.body;
+		            if (!body) return;
 
-	            var initialLang = resolveInitialLanguage();
-	            applyLanguage(initialLang);
-	        }
+		            if (theme === "dark") {
+		                body.classList.remove("theme-light");
+		            } else {
+		                body.classList.add("theme-light");
+		            }
 
-	        // Animated background particles
+		            var toggle = document.getElementById("theme-toggle");
+		            if (toggle) {
+		                toggle.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+		            }
+		        }
+
+		        function resolveInitialTheme() {
+		            var theme = "light";
+		            try {
+		                var stored = localStorage.getItem("lightmind-theme");
+		                if (stored === "dark" || stored === "light") {
+		                    theme = stored;
+		                }
+		            } catch (e) {}
+		            return theme;
+		        }
+
+		        function setupThemeToggle() {
+		            var toggle = document.getElementById("theme-toggle");
+		            if (!toggle) return;
+
+		            var initial = resolveInitialTheme();
+		            applyTheme(initial);
+
+		            toggle.addEventListener("click", function () {
+		                var current = this.getAttribute("data-theme") === "dark" ? "dark" : "light";
+		                var next = current === "dark" ? "light" : "dark";
+		                applyTheme(next);
+		                try {
+		                    localStorage.setItem("lightmind-theme", next);
+		                } catch (e) {}
+		            });
+		        }
+	
+		        // Animated background particles
 	        function createParticles() {
 	            const particles = document.querySelector('.particles');
             for (let i = 0; i < 50; i++) {
@@ -1235,24 +1484,25 @@
             }
         }
 
-	        // Initialize everything
-	        document.addEventListener('DOMContentLoaded', function() {
-	            createParticles();
-	            smoothScroll();
-	            handleScrollAnimations();
-	            setupLanguageSwitcher();
-            
-            // Add scroll event listeners
-            window.addEventListener('scroll', handleScrollAnimations);
-            window.addEventListener('scroll', handleHeaderScroll);
-            
-            // Add loading animation
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 1s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
+		        // Initialize everything
+		        document.addEventListener('DOMContentLoaded', function() {
+		            createParticles();
+		            smoothScroll();
+		            handleScrollAnimations();
+		            setupLanguageSwitcher();
+		            setupThemeToggle();
+	            
+		            // Add scroll event listeners
+		            window.addEventListener('scroll', handleScrollAnimations);
+		            window.addEventListener('scroll', handleHeaderScroll);
+	            
+		            // Add loading animation
+		            document.body.style.opacity = '0';
+		            setTimeout(() => {
+		                document.body.style.transition = 'opacity 1s ease';
+		                document.body.style.opacity = '1';
+		            }, 100);
+		        });
 
         // Add some interactive hover effects
         document.addEventListener('mousemove', function(e) {
