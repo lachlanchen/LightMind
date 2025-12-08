@@ -63,7 +63,20 @@
         }
 
         .logo {
-            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-size: 24px;
             font-weight: 800;
             background: linear-gradient(135deg, #00f4ff, #ff00ea);
             -webkit-background-clip: text;
@@ -208,7 +221,7 @@
             box-shadow: 0 14px 40px rgba(148, 163, 184, 0.35);
         }
 
-        body.theme-light .logo {
+        body.theme-light .logo-text {
             background: linear-gradient(135deg, #00f4ff, #ff00ea);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -633,9 +646,12 @@
 	    <div class="particles"></div>
 	
 	    <!-- Header -->
-		    <header>
-		        <nav>
-		            <div class="logo">LightMind</div>
+			    <header>
+  			        <nav>
+  			            <div class="logo">
+  			                <img src="pitch_deck/images/image10.png" alt="LightMind logo" class="logo-mark">
+  			                <span class="logo-text">LightMind</span>
+  			            </div>
 		            <div class="nav-right">
 		                <ul class="nav-links">
 	                    <li><a href="#features" data-i18n="nav.features">Features</a></li>
