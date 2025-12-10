@@ -557,6 +557,50 @@
             pointer-events: none;
         }
 
+        .store-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .store-counter-label,
+        .store-counter-max {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .store-counter-value {
+            display: inline-flex;
+            gap: 2px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .store-counter-digit {
+            width: 16px;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .store-counter-digit-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+
+        .store-counter-digit-inner span {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #e5e7eb;
+        }
+
         .store-device-image {
             width: 280px;
             max-width: 100%;
@@ -595,6 +639,10 @@
             border-color: rgba(148, 163, 184, 0.7);
             color: #6b7280;
             box-shadow: none;
+        }
+
+        body.theme-light .store-counter-digit {
+            background: rgba(15, 23, 42, 0.96);
         }
 
         @media (max-width: 900px) {
@@ -879,6 +927,11 @@
                     <div class="store-subtitle" data-i18n="store.promo">
                         First 1,000 pre-orders receive lifetime device refresh eligibility and 2 years of LightMind+ service.
                     </div>
+                    <div class="store-counter" aria-label="Pilot spots claimed">
+                        <span class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</span>
+                        <div class="store-counter-value" data-counter-target="991" data-counter-max="1000"></div>
+                        <span class="store-counter-max" data-i18n="store.counterMax">/ 1,000</span>
+                    </div>
                     <div class="store-actions">
                         <div class="store-buy">
                             <stripe-buy-button
@@ -1106,6 +1159,8 @@
 	                "store.promo": "First 1,000 pre-orders receive lifetime device refresh eligibility and 2 years of LightMind+ service.",
 	                "store.tryApp": "Try LightMind App (iOS)",
 	                "store.playSoon": "Google Play (Coming soon)",
+	                "store.counterLabel": "Pilot spots claimed",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "Privacy",
 	                "footer.terms": "Terms",
 	                "footer.support": "Support",
@@ -1166,6 +1221,8 @@
 	                "store.promo": "前 1,000 名预购用户，可终身享有设备更新资格，并获赠 2 年 LightMind+ 服务。",
 	                "store.tryApp": "体验 LightMind App（iOS）",
 	                "store.playSoon": "Google Play（即将上线）",
+	                "store.counterLabel": "已预订名额",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "隐私",
 	                "footer.terms": "条款",
 	                "footer.support": "支持",
@@ -1226,6 +1283,8 @@
 	                "store.promo": "前 1,000 名預購使用者可終身享有裝置更新資格，並獲得 2 年 LightMind+ 服務。",
 	                "store.tryApp": "體驗 LightMind App（iOS）",
 	                "store.playSoon": "Google Play（即將上線）",
+	                "store.counterLabel": "已預訂名額",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "隱私",
 	                "footer.terms": "條款",
 	                "footer.support": "支援",
@@ -1286,6 +1345,8 @@
 	                "store.promo": "先着 1,000 台の予約には、デバイスの生涯リフレッシュ権と 2 年間の LightMind+ サービスが付属します。",
 	                "store.tryApp": "LightMind App（iOS）を試す",
 	                "store.playSoon": "Google Play（近日提供予定）",
+	                "store.counterLabel": "予約済みパイロット枠",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "プライバシー",
 	                "footer.terms": "利用規約",
 	                "footer.support": "サポート",
@@ -1346,6 +1407,8 @@
 	                "store.promo": "선착순 1,000대 사전 주문 고객께 평생 디바이스 리프레시 자격과 2년간 LightMind+ 서비스를 제공합니다。",
 	                "store.tryApp": "LightMind App(iOS) 사용해 보기",
 	                "store.playSoon": "Google Play (곧 제공 예정)",
+	                "store.counterLabel": "예약된 파일럿 수량",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "개인정보",
 	                "footer.terms": "이용 약관",
 	                "footer.support": "지원",
@@ -1406,6 +1469,8 @@
 	                "store.promo": "1.000 đơn đặt trước đầu tiên sẽ được quyền đổi mới thiết bị trọn đời và tặng kèm 2 năm dịch vụ LightMind+。",
 	                "store.tryApp": "Dùng thử ứng dụng LightMind (iOS)",
 	                "store.playSoon": "Google Play (Sắp ra mắt)",
+	                "store.counterLabel": "Số suất thử nghiệm đã được đặt",
+	                "store.counterMax": "/ 1.000",
 	                "footer.privacy": "Quyền riêng tư",
 	                "footer.terms": "Điều khoản",
 	                "footer.support": "Hỗ trợ",
@@ -1466,6 +1531,8 @@
 	                "store.promo": "أول 1,000 طلب مسبق يحصلون على أهلية تجديد الجهاز مدى الحياة وسنتين من خدمة LightMind+。",
 	                "store.tryApp": "جرّب تطبيق LightMind (iOS)",
 	                "store.playSoon": "Google Play (قريبًا)",
+	                "store.counterLabel": "عدد مقاعد التجربة المحجوزة",
+	                "store.counterMax": "/ 1,000",
 	                "footer.privacy": "الخصوصية",
 	                "footer.terms": "الشروط",
 	                "footer.support": "الدعم",
@@ -1526,6 +1593,8 @@
 	                "store.promo": "Les 1 000 premières précommandes bénéficient d’un renouvellement matériel à vie et de 2 ans de service LightMind+。",
 	                "store.tryApp": "Essayer l’app LightMind (iOS)",
 	                "store.playSoon": "Google Play (bientôt disponible)",
+	                "store.counterLabel": "Places pilotes déjà réservées",
+	                "store.counterMax": "/ 1 000",
 	                "footer.privacy": "Confidentialité",
 	                "footer.terms": "Conditions",
 	                "footer.support": "Assistance",
@@ -1586,6 +1655,8 @@
 	                "store.promo": "Las primeras 1.000 reservas incluyen derecho de renovación de dispositivo de por vida y 2 años de servicio LightMind+。",
 	                "store.tryApp": "Probar la app LightMind (iOS)",
 	                "store.playSoon": "Google Play (próximamente)",
+	                "store.counterLabel": "Plazas piloto ya reservadas",
+	                "store.counterMax": "/ 1.000",
 	                "footer.privacy": "Privacidad",
 	                "footer.terms": "Términos",
 	                "footer.support": "Soporte",
@@ -1732,6 +1803,53 @@
 		                } catch (e) {}
 		            });
 		        }
+
+		        function initStoreCounter() {
+		            var el = document.querySelector('.store-counter-value');
+		            if (!el) return;
+
+		            var target = parseInt(el.getAttribute('data-counter-target') || '991', 10);
+		            var maxDigits = ('' + target).length;
+		            var digitHeight = 20; // must match CSS
+
+		            for (var i = 0; i < maxDigits; i++) {
+		                var digit = document.createElement('div');
+		                digit.className = 'store-counter-digit';
+		                var inner = document.createElement('div');
+		                inner.className = 'store-counter-digit-inner';
+		                for (var d = 0; d <= 9; d++) {
+		                    var span = document.createElement('span');
+		                    span.textContent = d;
+		                    inner.appendChild(span);
+		                }
+		                digit.appendChild(inner);
+		                el.appendChild(digit);
+		            }
+
+		            var digits = el.querySelectorAll('.store-counter-digit-inner');
+
+		            function render(value) {
+		                var s = String(Math.max(0, value));
+		                while (s.length < maxDigits) s = '0' + s;
+		                for (var i = 0; i < maxDigits; i++) {
+		                    var n = parseInt(s.charAt(i), 10);
+		                    var inner = digits[i];
+		                    inner.style.transform = 'translateY(' + (-n * digitHeight) + 'px)';
+		                }
+		            }
+
+		            var start = Math.max(target - 25, 0);
+		            render(start);
+
+		            var current = start;
+		            var interval = setInterval(function () {
+		                current++;
+		                render(current);
+		                if (current >= target) {
+		                    clearInterval(interval);
+		                }
+		            }, 70);
+		        }
 	
 		        // Animated background particles
 	        function createParticles() {
@@ -1809,6 +1927,7 @@
 		            handleScrollAnimations();
 		            setupLanguageSwitcher();
 		            setupThemeToggle();
+		            initStoreCounter();
 	            
 		            // Add scroll event listeners
 		            window.addEventListener('scroll', handleScrollAnimations);
