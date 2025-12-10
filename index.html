@@ -579,14 +579,15 @@
 
         .store-counter-value {
             display: inline-flex;
-            gap: 2px;
+            gap: 3px;
             font-size: 0.95rem;
             font-weight: 600;
+            align-items: center;
         }
 
         .store-counter-digit {
-            width: 16px;
-            height: 20px;
+            width: 20px;
+            height: 24px;
             overflow: hidden;
             position: relative;
             border-radius: 4px;
@@ -602,8 +603,8 @@
 
         .store-counter-digit-inner span {
             display: block;
-            height: 20px;
-            line-height: 20px;
+            height: 24px;
+            line-height: 24px;
             text-align: center;
             color: #e5e7eb;
         }
@@ -936,7 +937,7 @@
                     </div>
                     <div class="store-counter" aria-label="Pilot spots claimed">
                         <span class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</span>
-                        <div class="store-counter-value" data-counter-target="991" data-counter-max="1000"></div>
+                        <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
                         <span class="store-counter-max" data-i18n="store.counterMax">/ 1,000</span>
                     </div>
                     <div class="store-actions">
@@ -1817,9 +1818,10 @@
 		            var el = document.querySelector('.store-counter-value');
 		            if (!el) return;
 
-		            var target = parseInt(el.getAttribute('data-counter-target') || '991', 10);
-		            var maxDigits = ('' + target).length;
-		            var digitHeight = 20; // must match CSS
+		            var rawTarget = el.getAttribute('data-counter-target') || '991';
+		            var target = parseInt(rawTarget, 10);
+		            var maxDigits = rawTarget.length;
+		            var digitHeight = 24; // must match CSS
 
 		            for (var i = 0; i < maxDigits; i++) {
 		                var digit = document.createElement('div');
