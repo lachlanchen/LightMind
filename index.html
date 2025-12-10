@@ -472,18 +472,24 @@
         .store-strip {
             max-width: 1200px;
             margin: 110px auto 40px;
-            padding: 22px 32px;
+            padding: 22px 32px 24px;
             border-radius: 26px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 32px;
+            flex-direction: column;
+            gap: 20px;
             background:
                 radial-gradient(circle at 0% 0%, rgba(0, 244, 255, 0.13), transparent 55%),
                 radial-gradient(circle at 100% 100%, rgba(255, 0, 234, 0.12), transparent 55%),
                 rgba(8, 10, 26, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.14);
             box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .store-strip-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
         }
 
         .store-strip-left {
@@ -518,8 +524,8 @@
 
         .store-actions {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            flex-wrap: wrap;
+            align-items: center;
             gap: 12px;
         }
 
@@ -658,9 +664,14 @@
             .store-strip {
                 margin: 96px 20px 32px;
                 padding: 18px 18px 20px;
-                flex-direction: column;
                 align-items: flex-start;
                 gap: 20px;
+            }
+
+            .store-strip-main {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
             }
 
             .store-strip-right {
@@ -927,40 +938,42 @@
 		    </header>
 
             <div class="store-strip">
-                <div class="store-strip-left">
-                    <div class="store-kicker" data-i18n="store.kicker">LightMind M1 • Limited Pilot</div>
-                    <div class="store-title" data-i18n="store.title">Pre-order the all-day memory device</div>
-                    <div class="store-subtitle" data-i18n="store.subtitle">
-                        Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.
-                    </div>
-                    <div class="store-subtitle" data-i18n="store.promo">
-                        First 1,000 pre-orders receive lifetime device refresh eligibility and 2 years of LightMind+ service.
-                    </div>
-                    <div class="store-counter" aria-label="Pilot spots claimed">
-                        <span class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</span>
-                        <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
-                        <span class="store-counter-max" data-i18n="store.counterMax">/ 1,000</span>
-                    </div>
-                    <div class="store-actions">
-                        <div class="store-buy">
-                            <stripe-buy-button
-                              buy-button-id="buy_btn_1ScgbSGVh9caREe4JMPWN5fI"
-                              publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
-                            >
-                            </stripe-buy-button>
+                <div class="store-strip-main">
+                    <div class="store-strip-left">
+                        <div class="store-kicker" data-i18n="store.kicker">LightMind M1 • Limited Pilot</div>
+                        <div class="store-title" data-i18n="store.title">Pre-order the all-day memory device</div>
+                        <div class="store-subtitle" data-i18n="store.subtitle">
+                            Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.
                         </div>
-                        <div class="store-app-group">
-                            <a href="https://testflight.apple.com/join/KQR5cpJn" target="_blank" rel="noopener" class="store-app-link">
-                                <span class="store-app-link-label" data-i18n="store.tryApp">Try LightMind App (iOS)</span>
-                            </a>
-                            <button type="button" class="store-app-link store-app-link--secondary" disabled>
-                                <span class="store-app-link-label" data-i18n="store.playSoon">Google Play (Coming soon)</span>
-                            </button>
+                        <div class="store-subtitle" data-i18n="store.promo">
+                            First 1,000 pre-orders receive lifetime device refresh eligibility and 2 years of LightMind+ service.
                         </div>
+                        <div class="store-counter" aria-label="Pilot spots claimed">
+                            <span class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</span>
+                            <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
+                            <span class="store-counter-max" data-i18n="store.counterMax">/ 1,000</span>
+                        </div>
+                        <div class="store-actions">
+                            <div class="store-buy">
+                                <stripe-buy-button
+                                  buy-button-id="buy_btn_1ScgbSGVh9caREe4JMPWN5fI"
+                                  publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
+                                >
+                                </stripe-buy-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-strip-right">
+                        <img src="assets/img/lightmind-m1.png" alt="LightMind M1 wearable devices" class="store-device-image">
                     </div>
                 </div>
-                <div class="store-strip-right">
-                    <img src="assets/img/lightmind-m1.png" alt="LightMind M1 wearable devices" class="store-device-image">
+                <div class="store-app-group">
+                    <a href="https://testflight.apple.com/join/KQR5cpJn" target="_blank" rel="noopener" class="store-app-link">
+                        <span class="store-app-link-label" data-i18n="store.tryApp">Try LightMind App (iOS)</span>
+                    </a>
+                    <button type="button" class="store-app-link store-app-link--secondary" disabled>
+                        <span class="store-app-link-label" data-i18n="store.playSoon">Google Play (Coming soon)</span>
+                    </button>
                 </div>
             </div>
 
