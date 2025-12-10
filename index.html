@@ -574,8 +574,9 @@
 
         .store-counter {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 2px;
             margin-top: 4px;
         }
 
@@ -583,6 +584,7 @@
         .store-counter-max {
             font-size: 0.8rem;
             opacity: 0.8;
+            text-align: center;
         }
 
         .store-counter-value {
@@ -946,12 +948,7 @@
                             Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.
                         </div>
                         <div class="store-subtitle" data-i18n="store.promo">
-                            First 1,000 pre-orders receive lifetime device refresh eligibility and 2 years of LightMind+ service.
-                        </div>
-                        <div class="store-counter" aria-label="Pilot spots claimed">
-                            <span class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</span>
-                            <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
-                            <span class="store-counter-max" data-i18n="store.counterMax">/ 1,000</span>
+                            First 1,000 pre-orders receive lifetime device refresh eligibility and 12 months of LightMind+ service.
                         </div>
                         <div class="store-actions">
                             <div class="store-buy">
@@ -962,6 +959,11 @@
                                 </stripe-buy-button>
                             </div>
                         </div>
+                    </div>
+                    <div class="store-counter" aria-label="Pilot spots claimed">
+                        <div class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</div>
+                        <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
+                        <div class="store-counter-max" data-i18n="store.counterMax">/ 1,000</div>
                     </div>
                     <div class="store-strip-right">
                         <img src="assets/img/lightmind-m1.png" alt="LightMind M1 wearable devices" class="store-device-image">
