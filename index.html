@@ -523,6 +523,13 @@
             gap: 16px;
         }
 
+        .store-app-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
         .store-app-link {
             font-size: 0.85rem;
             text-decoration: none;
@@ -940,12 +947,14 @@
                             >
                             </stripe-buy-button>
                         </div>
-                        <a href="https://testflight.apple.com/join/KQR5cpJn" target="_blank" rel="noopener" class="store-app-link">
-                            <span class="store-app-link-label" data-i18n="store.tryApp">Try LightMind App (iOS)</span>
-                        </a>
-                        <button type="button" class="store-app-link store-app-link--secondary" disabled>
-                            <span class="store-app-link-label" data-i18n="store.playSoon">Google Play (Coming soon)</span>
-                        </button>
+                        <div class="store-app-group">
+                            <a href="https://testflight.apple.com/join/KQR5cpJn" target="_blank" rel="noopener" class="store-app-link">
+                                <span class="store-app-link-label" data-i18n="store.tryApp">Try LightMind App (iOS)</span>
+                            </a>
+                            <button type="button" class="store-app-link store-app-link--secondary" disabled>
+                                <span class="store-app-link-label" data-i18n="store.playSoon">Google Play (Coming soon)</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="store-strip-right">
