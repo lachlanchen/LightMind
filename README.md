@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="figs/banner.png" alt="LazyingArt banner" />
+</p>
+
 # LightMind - AI-Powered Memory Enhancement Device
 
 ![LightMind Banner](prototype.png)
