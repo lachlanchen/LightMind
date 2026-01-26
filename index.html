@@ -494,7 +494,7 @@
 
         .store-products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, minmax(220px, 1fr));
             gap: 22px;
             width: 100%;
             align-items: stretch;
@@ -808,6 +808,7 @@
 
             .store-products {
                 width: 100%;
+                grid-template-columns: repeat(2, minmax(200px, 1fr));
             }
 
             .store-device-image {
@@ -1090,7 +1091,7 @@
             }
 
             .store-products {
-                flex-direction: column;
+                grid-template-columns: repeat(2, minmax(180px, 1fr));
             }
 
             .store-app-group {
@@ -1146,6 +1147,10 @@
 
             .store-product-card {
                 padding: 14px;
+            }
+
+            .store-products {
+                grid-template-columns: 1fr;
             }
 
             .product-carousel-inner {
