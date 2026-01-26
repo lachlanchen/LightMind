@@ -493,18 +493,13 @@
         }
 
         .store-products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 22px;
             width: 100%;
         }
 
         .store-product-card {
-            flex: 1 1 0;
-            min-width: 220px;
-            max-width: 320px;
             padding: 16px;
             border-radius: 20px;
             background: rgba(8, 10, 26, 0.7);
@@ -1230,6 +1225,10 @@
                                 <div class="carousel-caption">LightMind O1</div>
                             </div>
                             <div class="carousel-slide" data-carousel-slide>
+                                <img src="product_assets/display.jpg" alt="LightMind Display wearable device">
+                                <div class="carousel-caption">LightMind Display</div>
+                            </div>
+                            <div class="carousel-slide" data-carousel-slide>
                                 <img src="product_assets/m1.jpg" alt="LightMind M1 wearable device">
                                 <div class="carousel-caption">LightMind M1</div>
                             </div>
@@ -1247,6 +1246,14 @@
                             <div class="store-product-name" data-i18n="store.product.o1">LightMind O1</div>
                             <stripe-buy-button
                               buy-button-id="buy_btn_1ScgbSGVh9caREe4JMPWN5fI"
+                              publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
+                            >
+                            </stripe-buy-button>
+                        </div>
+                        <div class="store-product-card">
+                            <div class="store-product-name" data-i18n="store.product.display">LightMind Display</div>
+                            <stripe-buy-button
+                              buy-button-id="buy_btn_1Stn3UGVh9caREe4bpaBu69w"
                               publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
                             >
                             </stripe-buy-button>
@@ -1304,6 +1311,12 @@
 		                    <p data-i18n="product.o1.p3" data-i18n-html="true"><strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.</p>
 		                </div>
 		                <div class="product-showcase-slide" data-product-slide>
+		                    <h2 data-i18n="product.display.heading">LightMind Display — Instant Visual Companion</h2>
+		                    <p data-i18n="product.display.p1">LightMind Display pairs with your wearable ecosystem to surface live cues, translations, and memory highlights without pulling you out of the moment.</p>
+		                    <p data-i18n="product.display.p2">It keeps key details in view—names, notes, and context—so decisions feel effortless and you stay present.</p>
+		                    <p data-i18n="product.display.p3" data-i18n-html="true"><strong>Key Innovation:</strong> A glanceable display layer that turns your captured world into instant, actionable prompts.</p>
+		                </div>
+		                <div class="product-showcase-slide" data-product-slide>
 		                    <h2 data-i18n="product.m1.heading">LightMind-M1 — Always-Ready AI Glasses</h2>
 		                    <p data-i18n="product.m1.p1">LightMind-M1 is an always-ready AI glasses for real life: it captures moments hands-free and delivers real-time translation, meeting notes, and instant summaries as you go.</p>
 		                    <p data-i18n="product.m1.p2">With multimodal understanding and seamless recall, it keeps your day organized without pulling you out of it.</p>
@@ -1323,6 +1336,9 @@
 		            <div class="product-showcase-media">
 		                <div class="product-showcase-image is-active" data-product-image>
 		                    <img src="product_assets/o1.png" alt="LightMind O1 wearable devices" />
+		                </div>
+		                <div class="product-showcase-image" data-product-image>
+		                    <img src="product_assets/display.jpg" alt="LightMind Display wearable device" />
 		                </div>
 		                <div class="product-showcase-image" data-product-image>
 		                    <img src="product_assets/m1.jpg" alt="LightMind M1 wearable devices" />
@@ -1480,6 +1496,10 @@
                     "product.o1.p1": "LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.",
                     "product.o1.p2": "It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.",
                     "product.o1.p3": "<strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.",
+                    "product.display.heading": "LightMind Display — Instant Visual Companion",
+                    "product.display.p1": "LightMind Display pairs with your wearable ecosystem to surface live cues, translations, and memory highlights without pulling you out of the moment.",
+                    "product.display.p2": "It keeps key details in view—names, notes, and context—so decisions feel effortless and you stay present.",
+                    "product.display.p3": "<strong>Key Innovation:</strong> A glanceable display layer that turns your captured world into instant, actionable prompts.",
                     "product.m1.heading": "LightMind-M1 — Always-Ready AI Glasses",
                     "product.m1.p1": "LightMind-M1 is an always-ready AI glasses for real life: it captures moments hands-free and delivers real-time translation, meeting notes, and instant summaries as you go.",
                     "product.m1.p2": "With multimodal understanding and seamless recall, it keeps your day organized without pulling you out of it.",
@@ -1527,6 +1547,7 @@
                 "store.subtitle": "Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.",
                 "store.promo": "First 1,000 pre-orders receive lifetime device refresh eligibility and 12 months of LightMind+ service.",
                 "store.product.o1": "LightMind O1",
+                "store.product.display": "LightMind Display",
                 "store.product.m1": "LightMind M1",
                 "store.product.m1pro": "LightMind M1 Pro",
                 "store.tryApp": "Try LightMind App (iOS)",
