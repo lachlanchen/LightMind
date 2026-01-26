@@ -309,11 +309,11 @@
             box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
         }
 
-        body.theme-light .product-image img {
+        body.theme-light .product-showcase-image img {
             box-shadow: 0 34px 90px rgba(15, 23, 42, 0.35);
         }
 
-        body.theme-light .product-info h2,
+        body.theme-light .product-showcase-slide h2,
         body.theme-light .section-title {
             background: linear-gradient(135deg, #0f172a, #2563eb);
             -webkit-background-clip: text;
@@ -839,24 +839,27 @@
             margin-bottom: 100px;
         }
 
-        .product-image {
+        .product-showcase-text {
             position: relative;
-            text-align: center;
         }
 
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 244, 255, 0.2);
-            transition: transform 0.3s ease;
+        .product-showcase-slide {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
         }
 
-        .product-image:hover img {
-            transform: scale(1.05);
+        .product-showcase-slide.is-active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+            pointer-events: auto;
         }
 
-        .product-info h2 {
+        .product-showcase-slide h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
             background: linear-gradient(135deg, #ffffff, #ff00ea);
@@ -865,10 +868,48 @@
             background-clip: text;
         }
 
-        .product-info p {
+        .product-showcase-slide p {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 20px;
+        }
+
+        .product-showcase-controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .product-showcase-media {
+            position: relative;
+            text-align: center;
+            min-height: 320px;
+        }
+
+        .product-showcase-image {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .product-showcase-image.is-active {
+            position: relative;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .product-showcase-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 244, 255, 0.2);
         }
 
         /* Features Grid */
@@ -1159,15 +1200,41 @@
 
 		    <!-- Product Showcase -->
 		    <section id="product">
-		        <div class="product-showcase fade-in">
-		            <div class="product-info">
-		                <h2 data-i18n="product.heading">LightMind O1 — All-Day Memory Device</h2>
-		                <p data-i18n="product.p1">LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.</p>
-		                <p data-i18n="product.p2">It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.</p>
-		                <p data-i18n="product.p3" data-i18n-html="true"><strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.</p>
+		        <div class="product-showcase fade-in" data-product-carousel>
+		            <div class="product-showcase-text">
+		                <div class="product-showcase-slide is-active" data-product-slide>
+		                    <h2 data-i18n="product.o1.heading">LightMind O1 — All-Day Memory Device</h2>
+		                    <p data-i18n="product.o1.p1">LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.</p>
+		                    <p data-i18n="product.o1.p2">It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.</p>
+		                    <p data-i18n="product.o1.p3" data-i18n-html="true"><strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.</p>
+		                </div>
+		                <div class="product-showcase-slide" data-product-slide>
+		                    <h2 data-i18n="product.m1.heading">LightMind-M1 — Always-Ready AI Glasses</h2>
+		                    <p data-i18n="product.m1.p1">LightMind-M1 is an always-ready AI glasses for real life: it captures moments hands-free and delivers real-time translation, meeting notes, and instant summaries as you go.</p>
+		                    <p data-i18n="product.m1.p2">With multimodal understanding and seamless recall, it keeps your day organized without pulling you out of it.</p>
+		                    <p data-i18n="product.m1.p3" data-i18n-html="true"><strong>Key Innovation:</strong> Wearable multimodal AI that turns everyday experiences into searchable highlights—so you stay present while it keeps the details.</p>
+		                </div>
+		                <div class="product-showcase-slide" data-product-slide>
+		                    <h2 data-i18n="product.m1pro.heading">LightMind-M1 Pro — Maximum Capability</h2>
+		                    <p data-i18n="product.m1pro.p1">LightMind-M1 Pro is engineered for maximum capability: continuous hands-free capture paired with stronger multimodal intelligence to understand what matters—not just what happened.</p>
+		                    <p data-i18n="product.m1pro.p2">It delivers more accurate summaries, sharper context-aware search, and more reliable memory rewind with smarter reminders and decision support.</p>
+		                    <p data-i18n="product.m1pro.p3" data-i18n-html="true"><strong>Key Innovation:</strong> A strengthened end-to-end “capture → understanding → retrieval” pipeline that improves recall precision and speed, turning daily moments into actionable results.</p>
+		                </div>
+		                <div class="product-showcase-controls">
+		                    <button class="carousel-button" type="button" data-product-prev aria-label="Previous product">‹</button>
+		                    <button class="carousel-button" type="button" data-product-next aria-label="Next product">›</button>
+		                </div>
 		            </div>
-		            <div class="product-image">
-		                <img src="product_assets/o1.png" alt="LightMind O1 wearable devices" />
+		            <div class="product-showcase-media">
+		                <div class="product-showcase-image is-active" data-product-image>
+		                    <img src="product_assets/o1.png" alt="LightMind O1 wearable devices" />
+		                </div>
+		                <div class="product-showcase-image" data-product-image>
+		                    <img src="product_assets/m1.jpg" alt="LightMind M1 wearable devices" />
+		                </div>
+		                <div class="product-showcase-image" data-product-image>
+		                    <img src="product_assets/m1pro.jpg" alt="LightMind M1 Pro wearable devices" />
+		                </div>
 		            </div>
         </div>
     </section>
@@ -1314,6 +1381,18 @@
                 "product.p1": "LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.",
 	                "product.p2": "It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.",
 	                "product.p3": "<strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.",
+                    "product.o1.heading": "LightMind O1 — All-Day Memory Device",
+                    "product.o1.p1": "LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.",
+                    "product.o1.p2": "It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.",
+                    "product.o1.p3": "<strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.",
+                    "product.m1.heading": "LightMind-M1 — Always-Ready AI Glasses",
+                    "product.m1.p1": "LightMind-M1 is an always-ready AI glasses for real life: it captures moments hands-free and delivers real-time translation, meeting notes, and instant summaries as you go.",
+                    "product.m1.p2": "With multimodal understanding and seamless recall, it keeps your day organized without pulling you out of it.",
+                    "product.m1.p3": "<strong>Key Innovation:</strong> Wearable multimodal AI that turns everyday experiences into searchable highlights—so you stay present while it keeps the details.",
+                    "product.m1pro.heading": "LightMind-M1 Pro — Maximum Capability",
+                    "product.m1pro.p1": "LightMind-M1 Pro is engineered for maximum capability: continuous hands-free capture paired with stronger multimodal intelligence to understand what matters—not just what happened.",
+                    "product.m1pro.p2": "It delivers more accurate summaries, sharper context-aware search, and more reliable memory rewind with smarter reminders and decision support.",
+                    "product.m1pro.p3": "<strong>Key Innovation:</strong> A strengthened end-to-end “capture → understanding → retrieval” pipeline that improves recall precision and speed, turning daily moments into actionable results.",
 	                "features.title": "Core Capabilities",
 	                "features.ai.title": "Multimodal AI Memory Graph",
 	                "features.ai.body": "Multimodal large models transform continuous audio and vision into a structured memory graph of people, places, events and relationships.",
@@ -2097,6 +2176,57 @@
 
 	            resetInterval();
 	        }
+
+	        function initProductShowcaseCarousel() {
+	            var showcase = document.querySelector('[data-product-carousel]');
+	            if (!showcase) return;
+
+	            var slides = showcase.querySelectorAll('[data-product-slide]');
+	            var images = showcase.querySelectorAll('[data-product-image]');
+	            if (!slides.length || slides.length !== images.length) return;
+
+	            var prevButton = showcase.querySelector('[data-product-prev]');
+	            var nextButton = showcase.querySelector('[data-product-next]');
+	            var current = 0;
+	            var intervalId;
+
+	            function show(index) {
+	                slides[current].classList.remove('is-active');
+	                images[current].classList.remove('is-active');
+	                current = (index + slides.length) % slides.length;
+	                slides[current].classList.add('is-active');
+	                images[current].classList.add('is-active');
+	            }
+
+	            function next() {
+	                show(current + 1);
+	            }
+
+	            function prev() {
+	                show(current - 1);
+	            }
+
+	            function resetInterval() {
+	                if (intervalId) clearInterval(intervalId);
+	                intervalId = setInterval(next, 5200);
+	            }
+
+	            if (nextButton) {
+	                nextButton.addEventListener('click', function () {
+	                    next();
+	                    resetInterval();
+	                });
+	            }
+
+	            if (prevButton) {
+	                prevButton.addEventListener('click', function () {
+	                    prev();
+	                    resetInterval();
+	                });
+	            }
+
+	            resetInterval();
+	        }
 	
 		        // Animated background particles
 	        function createParticles() {
@@ -2174,6 +2304,7 @@
 		            setupThemeToggle();
 		            initStoreCounter();
 		            initProductCarousel();
+		            initProductShowcaseCarousel();
 	            
 		            // Add scroll event listeners
 		            window.addEventListener('scroll', handleScrollAnimations);
