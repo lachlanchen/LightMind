@@ -652,6 +652,81 @@
             color: #e5e7eb;
         }
 
+        .product-carousel {
+            width: 100%;
+            padding: 24px 0 60px;
+        }
+
+        .product-carousel-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .carousel-track {
+            position: relative;
+            flex: 1;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .carousel-slide.is-active {
+            position: relative;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .carousel-slide img {
+            width: 420px;
+            max-width: 100%;
+            border-radius: 22px;
+            box-shadow: 0 26px 80px rgba(0, 0, 0, 0.65);
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            margin-top: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .carousel-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(15, 23, 42, 0.75);
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .carousel-button:hover {
+            transform: translateY(-1px);
+            border-color: rgba(0, 244, 255, 0.8);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
         body.theme-light .store-strip {
             background:
                 radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
@@ -698,6 +773,17 @@
             background: rgba(15, 23, 42, 0.96);
         }
 
+        body.theme-light .carousel-button {
+            background: rgba(255, 255, 255, 0.96);
+            border-color: rgba(148, 163, 184, 0.6);
+            color: #0f172a;
+            box-shadow: 0 10px 30px rgba(148, 163, 184, 0.4);
+        }
+
+        body.theme-light .carousel-caption {
+            color: #0f172a;
+        }
+
         @media (max-width: 900px) {
             .store-strip {
                 margin: 96px 20px 32px;
@@ -722,6 +808,14 @@
 
             .store-device-image {
                 width: 220px;
+            }
+
+            .product-carousel-inner {
+                padding: 0 20px;
+            }
+
+            .carousel-track {
+                min-height: 260px;
             }
         }
 
@@ -1034,6 +1128,27 @@
                     <button type="button" class="store-app-link store-app-link--secondary" disabled>
                         <span class="store-app-link-label" data-i18n="store.playSoon">Google Play (Coming soon)</span>
                     </button>
+                </div>
+            </div>
+
+            <div class="product-carousel" aria-label="Product gallery">
+                <div class="product-carousel-inner">
+                    <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous product">‹</button>
+                    <div class="carousel-track" data-carousel>
+                        <div class="carousel-slide is-active" data-carousel-slide>
+                            <img src="product_assets/o1.png" alt="LightMind O1 wearable device">
+                            <div class="carousel-caption">LightMind O1</div>
+                        </div>
+                        <div class="carousel-slide" data-carousel-slide>
+                            <img src="product_assets/m1.jpg" alt="LightMind M1 wearable device">
+                            <div class="carousel-caption">LightMind M1</div>
+                        </div>
+                        <div class="carousel-slide" data-carousel-slide>
+                            <img src="product_assets/m1pro.jpg" alt="LightMind M1 Pro wearable device">
+                            <div class="carousel-caption">LightMind M1 Pro</div>
+                        </div>
+                    </div>
+                    <button class="carousel-button" type="button" data-carousel-next aria-label="Next product">›</button>
                 </div>
             </div>
 
@@ -1891,9 +2006,9 @@
 		            });
 		        }
 
-		        function initStoreCounter() {
-		            var el = document.querySelector('.store-counter-value');
-		            if (!el) return;
+	        function initStoreCounter() {
+	            var el = document.querySelector('.store-counter-value');
+	            if (!el) return;
 
 		            var rawTarget = el.getAttribute('data-counter-target') || '991';
 		            var target = parseInt(rawTarget, 10);
@@ -1936,8 +2051,56 @@
 		                if (current >= target) {
 		                    clearInterval(interval);
 		                }
-		            }, 70);
-		        }
+	            }, 70);
+	        }
+
+	        function initProductCarousel() {
+	            var carousel = document.querySelector('[data-carousel]');
+	            if (!carousel) return;
+
+	            var slides = carousel.querySelectorAll('[data-carousel-slide]');
+	            if (!slides.length) return;
+
+	            var prevButton = document.querySelector('[data-carousel-prev]');
+	            var nextButton = document.querySelector('[data-carousel-next]');
+	            var current = 0;
+	            var intervalId;
+
+	            function showSlide(index) {
+	                slides[current].classList.remove('is-active');
+	                current = (index + slides.length) % slides.length;
+	                slides[current].classList.add('is-active');
+	            }
+
+	            function next() {
+	                showSlide(current + 1);
+	            }
+
+	            function prev() {
+	                showSlide(current - 1);
+	            }
+
+	            function resetInterval() {
+	                if (intervalId) clearInterval(intervalId);
+	                intervalId = setInterval(next, 4500);
+	            }
+
+	            if (nextButton) {
+	                nextButton.addEventListener('click', function () {
+	                    next();
+	                    resetInterval();
+	                });
+	            }
+
+	            if (prevButton) {
+	                prevButton.addEventListener('click', function () {
+	                    prev();
+	                    resetInterval();
+	                });
+	            }
+
+	            resetInterval();
+	        }
 	
 		        // Animated background particles
 	        function createParticles() {
@@ -2014,6 +2177,7 @@
 		            setupLanguageSwitcher();
 		            setupThemeToggle();
 		            initStoreCounter();
+		            initProductCarousel();
 	            
 		            // Add scroll event listeners
 		            window.addEventListener('scroll', handleScrollAnimations);
