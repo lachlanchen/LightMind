@@ -817,6 +817,15 @@
             .carousel-track {
                 min-height: 260px;
             }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .product-showcase-controls {
+                justify-content: center;
+            }
         }
 
         .section-title {
@@ -1055,6 +1064,92 @@
             
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 16px 20px;
+            }
+
+            .nav-right {
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 12px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .store-product-card {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .store-products {
+                flex-direction: column;
+            }
+
+            .store-app-group {
+                justify-content: center;
+            }
+
+            .product-carousel-inner {
+                gap: 12px;
+            }
+
+            .carousel-button {
+                width: 36px;
+                height: 36px;
+                font-size: 1.2rem;
+            }
+
+            .carousel-slide img {
+                width: 100%;
+            }
+
+            .product-showcase-slide h2 {
+                font-size: 2rem;
+            }
+
+            .product-showcase-slide p {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero {
+                height: auto;
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .store-strip {
+                margin: 88px 14px 28px;
+                padding: 16px;
+            }
+
+            .store-title {
+                font-size: 1.4rem;
+            }
+
+            .store-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .store-product-card {
+                padding: 14px;
+            }
+
+            .product-carousel-inner {
+                padding: 0 14px;
+            }
+
+            .product-showcase-media {
+                min-height: 240px;
             }
         }
 
