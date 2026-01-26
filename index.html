@@ -487,20 +487,47 @@
 
         .store-strip-main {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 32px;
+            gap: 24px;
         }
 
-        .store-strip-left,
-        .store-strip-right,
-        .store-counter {
-            flex: 1 1 0;
-        }
-
-        .store-strip-right {
+        .store-products {
             display: flex;
-            justify-content: flex-end;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 22px;
+            width: 100%;
+        }
+
+        .store-product-card {
+            flex: 1 1 0;
+            min-width: 220px;
+            max-width: 320px;
+            padding: 16px;
+            border-radius: 20px;
+            background: rgba(8, 10, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+
+        .store-product-name {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .store-product-image {
+            width: 220px;
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.7);
+            object-fit: cover;
         }
 
         .store-strip-heading {
@@ -533,13 +560,6 @@
             font-size: 0.98rem;
             opacity: 0.88;
             margin-bottom: 16px;
-        }
-
-        .store-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 12px;
         }
 
         .store-app-group {
@@ -632,14 +652,6 @@
             color: #e5e7eb;
         }
 
-        .store-device-image {
-            width: 280px;
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.8);
-            object-fit: cover;
-        }
-
         body.theme-light .store-strip {
             background:
                 radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
@@ -647,6 +659,16 @@
                 rgba(255, 255, 255, 0.94);
             border-color: rgba(148, 163, 184, 0.45);
             box-shadow: 0 26px 64px rgba(148, 163, 184, 0.55);
+        }
+
+        body.theme-light .store-product-card {
+            background: rgba(255, 255, 255, 0.96);
+            border-color: rgba(148, 163, 184, 0.4);
+            box-shadow: 0 18px 50px rgba(148, 163, 184, 0.35);
+        }
+
+        body.theme-light .store-product-name {
+            color: #0f172a;
         }
 
         body.theme-light .store-subtitle {
@@ -685,8 +707,7 @@
             }
 
             .store-strip-main {
-                flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 18px;
             }
 
@@ -695,9 +716,8 @@
                 align-items: center;
             }
 
-            .store-strip-right {
+            .store-products {
                 width: 100%;
-                justify-content: center;
             }
 
             .store-device-image {
@@ -960,7 +980,7 @@
 
             <div class="store-strip">
                 <div class="store-strip-heading">
-                    <div class="store-kicker" data-i18n="store.kicker">LightMind M1 • Limited Pilot</div>
+                    <div class="store-kicker" data-i18n="store.kicker">LightMind O1 • Limited Pilot</div>
                     <div class="store-title" data-i18n="store.title">Pre-order the all-day memory device</div>
                 </div>
                 <div class="store-strip-copy">
@@ -972,24 +992,39 @@
                     </div>
                 </div>
                 <div class="store-strip-main">
-                    <div class="store-strip-left">
-                        <div class="store-actions">
-                            <div class="store-buy">
-                                <stripe-buy-button
-                                  buy-button-id="buy_btn_1ScgbSGVh9caREe4JMPWN5fI"
-                                  publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
-                                >
-                                </stripe-buy-button>
-                            </div>
+                    <div class="store-products">
+                        <div class="store-product-card">
+                            <img src="product_assets/o1.png" alt="LightMind O1 wearable device" class="store-product-image">
+                            <div class="store-product-name" data-i18n="store.product.o1">LightMind O1</div>
+                            <stripe-buy-button
+                              buy-button-id="buy_btn_1ScgbSGVh9caREe4JMPWN5fI"
+                              publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
+                            >
+                            </stripe-buy-button>
+                        </div>
+                        <div class="store-product-card">
+                            <img src="product_assets/o1.png" alt="LightMind M1 wearable device" class="store-product-image">
+                            <div class="store-product-name" data-i18n="store.product.m1">LightMind M1</div>
+                            <stripe-buy-button
+                              buy-button-id="buy_btn_1StknMGVh9caREe4jBSOeYpO"
+                              publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
+                            >
+                            </stripe-buy-button>
+                        </div>
+                        <div class="store-product-card">
+                            <img src="product_assets/o1.png" alt="LightMind M1 Pro wearable device" class="store-product-image">
+                            <div class="store-product-name" data-i18n="store.product.m1pro">LightMind M1 Pro</div>
+                            <stripe-buy-button
+                              buy-button-id="buy_btn_1StkxHGVh9caREe4Ogo8qDRv"
+                              publishable-key="pk_live_51ScfvWGVh9caREe4RH298i9XHnbAhiDEgJ8fTYLZHAl0TkG7Yx9P7AvhWWTCmCugh8GuLUGq2dLX2RvVnZ3gyga500weVzgiWq"
+                            >
+                            </stripe-buy-button>
                         </div>
                     </div>
                     <div class="store-counter" aria-label="Pilot spots claimed">
                         <div class="store-counter-label" data-i18n="store.counterLabel">Pilot spots claimed</div>
                         <div class="store-counter-value" data-counter-target="007" data-counter-max="1000"></div>
                         <div class="store-counter-max" data-i18n="store.counterMax">/ 1,000</div>
-                    </div>
-                    <div class="store-strip-right">
-                        <img src="assets/img/lightmind-m1.png" alt="LightMind M1 wearable devices" class="store-device-image">
                     </div>
                 </div>
                 <div class="store-app-group">
@@ -1015,13 +1050,13 @@
 		    <section id="product">
 		        <div class="product-showcase fade-in">
 		            <div class="product-info">
-		                <h2 data-i18n="product.heading">LightMind M1 — All-Day Memory Device</h2>
-		                <p data-i18n="product.p1">LightMind M1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.</p>
+		                <h2 data-i18n="product.heading">LightMind O1 — All-Day Memory Device</h2>
+		                <p data-i18n="product.p1">LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.</p>
 		                <p data-i18n="product.p2">It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.</p>
 		                <p data-i18n="product.p3" data-i18n-html="true"><strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.</p>
 		            </div>
 		            <div class="product-image">
-		                <img src="assets/img/lightmind-m1.png" alt="LightMind M1 wearable devices" />
+		                <img src="product_assets/o1.png" alt="LightMind O1 wearable devices" />
 		            </div>
         </div>
     </section>
@@ -1164,8 +1199,8 @@
 	                "hero.title": "Your Always-On Multimodal Second Brain",
 	                "hero.subtitle": "An all-day multimodal intelligent memory platform that captures, compresses, encrypts, and organizes your real-world experiences into a private, searchable memory graph.",
 	                "hero.cta": "Discover the Future",
-	                "product.heading": "LightMind M1 — All-Day Memory Device",
-	                "product.p1": "LightMind M1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.",
+                "product.heading": "LightMind O1 — All-Day Memory Device",
+                "product.p1": "LightMind O1 is an ultra-low-power wearable that combines optical computing, neuromorphic encryption and multimodal AI to capture your day end-to-end.",
 	                "product.p2": "It acts as your personal “digital brain”, integrating safety records, intelligent search, traceability, reminders and decision support.",
 	                "product.p3": "<strong>Key Innovation:</strong> On-sensor optical compression and neuromorphic encryption lock memories at the source while enabling powerful AI analysis.",
 	                "features.title": "Core Capabilities",
@@ -1202,11 +1237,14 @@
 	                "users.healthcare.body": "Clinicians and care teams who benefit from secure, structured recall of patient interactions and observations.",
 	                "users.seniors.title": "Seniors & Caregivers",
 	                "users.seniors.body": "Older adults experiencing memory challenges, and families seeking safe, privacy-preserving support in daily life.",
-	                "store.kicker": "LightMind M1 • Limited Pilot",
-	                "store.title": "Pre-order the all-day memory device",
-	                "store.subtitle": "Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.",
-	                "store.promo": "First 1,000 pre-orders receive lifetime device refresh eligibility and 12 months of LightMind+ service.",
-	                "store.tryApp": "Try LightMind App (iOS)",
+                "store.kicker": "LightMind O1 • Limited Pilot",
+                "store.title": "Pre-order the all-day memory device",
+                "store.subtitle": "Secure multimodal capture paired with the LightMind AI app for real-time interaction across your glasses and wearable module.",
+                "store.promo": "First 1,000 pre-orders receive lifetime device refresh eligibility and 12 months of LightMind+ service.",
+                "store.product.o1": "LightMind O1",
+                "store.product.m1": "LightMind M1",
+                "store.product.m1pro": "LightMind M1 Pro",
+                "store.tryApp": "Try LightMind App (iOS)",
 	                "store.playSoon": "Google Play (Coming soon)",
 	                "store.counterLabel": "Pilot spots claimed",
 	                "store.counterMax": "/ 1,000",
