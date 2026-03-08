@@ -2382,6 +2382,86 @@
             }
         }
 
+        /* Store buy-button carousel sync */
+        .store-strip-main {
+            gap: 22px;
+        }
+
+        .store-products {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(260px, 1fr));
+            gap: 24px;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .store-product-card {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px) scale(0.96);
+            transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .store-product-card.is-visible {
+            display: flex;
+            opacity: 0.75;
+        }
+
+        .store-product-card.pos-left {
+            grid-column: 1;
+        }
+
+        .store-product-card.pos-center {
+            grid-column: 2;
+        }
+
+        .store-product-card.pos-right {
+            grid-column: 3;
+        }
+
+        .store-product-card.is-active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            border-color: rgba(0, 244, 255, 0.62);
+            box-shadow: 0 26px 66px rgba(8, 12, 34, 0.65);
+        }
+
+        .store-buy-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .store-buy-controls .carousel-button {
+            width: 40px;
+            height: 40px;
+        }
+
+        body.theme-light .store-product-card.is-active {
+            border-color: rgba(37, 99, 235, 0.45);
+            box-shadow: 0 24px 56px rgba(37, 99, 235, 0.2);
+        }
+
+        @media (max-width: 1100px) {
+            .store-products {
+                grid-template-columns: minmax(270px, 1fr);
+                max-width: 360px;
+                margin: 0 auto;
+            }
+
+            .store-product-card.pos-left,
+            .store-product-card.pos-center,
+            .store-product-card.pos-right {
+                grid-column: 1;
+            }
+
+            .store-product-card.is-visible:not(.is-active) {
+                display: none;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -2515,6 +2595,10 @@
                             >
                             </stripe-buy-button>
                         </div>
+                    </div>
+                    <div class="store-buy-controls" aria-label="Browse product purchase options">
+                        <button class="carousel-button" type="button" data-buy-prev aria-label="Previous buy option">‹</button>
+                        <button class="carousel-button" type="button" data-buy-next aria-label="Next buy option">›</button>
                     </div>
                     <div class="store-counter" aria-label="Early access spots claimed">
                         <div class="store-counter-label" data-i18n="store.counterLabel">Early access spots claimed</div>
@@ -3615,54 +3699,101 @@
 	            return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	        }
 
-	        function initProductCarousel() {
-	            var carousel = document.querySelector('[data-carousel]');
-	            if (!carousel) return;
+        function initProductCarousel() {
+            var carousel = document.querySelector('[data-carousel]');
+            if (!carousel) return;
 
-	            var slides = carousel.querySelectorAll('[data-carousel-slide]');
-	            if (!slides.length) return;
+            var slides = carousel.querySelectorAll('[data-carousel-slide]');
+            if (!slides.length) return;
 
-	            var prevButton = document.querySelector('[data-carousel-prev]');
-	            var nextButton = document.querySelector('[data-carousel-next]');
-	            var current = 0;
-	            var intervalId;
+            var productCards = document.querySelectorAll('.store-products .store-product-card');
+            var prevButtons = document.querySelectorAll('[data-carousel-prev], [data-buy-prev]');
+            var nextButtons = document.querySelectorAll('[data-carousel-next], [data-buy-next]');
+            var current = 0;
+            var intervalId;
 
-	            function showSlide(index) {
-	                slides[current].classList.remove('is-active');
-	                current = (index + slides.length) % slides.length;
-	                slides[current].classList.add('is-active');
-	            }
+            function addCardState(index, position, isActive) {
+                var card = productCards[index];
+                if (!card) return;
+                card.classList.add('is-visible', position);
+                if (isActive) {
+                    card.classList.add('is-active');
+                }
+            }
 
-	            function next() {
-	                showSlide(current + 1);
-	            }
+            function renderCards(activeIndex) {
+                if (!productCards.length) return;
+
+                var isCompact = window.matchMedia && window.matchMedia('(max-width: 1100px)').matches;
+                productCards.forEach(function (card) {
+                    card.classList.remove('is-visible', 'is-active', 'pos-left', 'pos-center', 'pos-right');
+                });
+
+                if (isCompact) {
+                    addCardState(activeIndex, 'pos-center', true);
+                    return;
+                }
+
+                var last = productCards.length - 1;
+                if (activeIndex <= 0) {
+                    addCardState(0, 'pos-center', true);
+                    addCardState(1, 'pos-right', false);
+                    return;
+                }
+
+                if (activeIndex >= last) {
+                    addCardState(last - 1, 'pos-left', false);
+                    addCardState(last, 'pos-center', true);
+                    return;
+                }
+
+                addCardState(activeIndex - 1, 'pos-left', false);
+                addCardState(activeIndex, 'pos-center', true);
+                addCardState(activeIndex + 1, 'pos-right', false);
+            }
+
+            function showSlide(index) {
+                slides[current].classList.remove('is-active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('is-active');
+                renderCards(current);
+            }
+
+            function next() {
+                showSlide(current + 1);
+            }
 
 	            function prev() {
 	                showSlide(current - 1);
 	            }
 
-	            function resetInterval() {
-	                if (intervalId) clearInterval(intervalId);
-	                if (prefersReducedMotion()) return;
-	                intervalId = setInterval(next, 5600);
-	            }
+            function resetInterval() {
+                if (intervalId) clearInterval(intervalId);
+                if (prefersReducedMotion()) return;
+                intervalId = setInterval(next, 5600);
+            }
 
-	            if (nextButton) {
-	                nextButton.addEventListener('click', function () {
-	                    next();
-	                    resetInterval();
-	                });
-	            }
+            nextButtons.forEach(function (nextButton) {
+                nextButton.addEventListener('click', function () {
+                    next();
+                    resetInterval();
+                });
+            });
 
-	            if (prevButton) {
-	                prevButton.addEventListener('click', function () {
-	                    prev();
-	                    resetInterval();
-	                });
-	            }
+            prevButtons.forEach(function (prevButton) {
+                prevButton.addEventListener('click', function () {
+                    prev();
+                    resetInterval();
+                });
+            });
 
-	            resetInterval();
-	        }
+            window.addEventListener('resize', function () {
+                renderCards(current);
+            });
+
+            renderCards(current);
+            resetInterval();
+        }
 
 	        function initProductShowcaseCarousel() {
 	            var showcase = document.querySelector('[data-product-carousel]');
