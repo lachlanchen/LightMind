@@ -1,1 +1,3 @@
-references/
+references/*
+!references/plans/
+!references/plans/**
